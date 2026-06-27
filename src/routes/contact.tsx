@@ -27,10 +27,16 @@ function Contact() {
   const input = "w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm outline-none focus:border-[#0056b3]";
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-12">
-      <div className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: "#0056b3" }}>Contact</div>
-      <h1 className="mt-2 text-3xl font-bold md:text-4xl">Let's talk</h1>
-      <p className="mt-3 max-w-2xl text-sm text-gray-600">Tell us about your project ,  design, construction, materials, or real estate. We'll respond within hours.</p>
+    <>
+      <PageHero
+        eyebrow="Contact"
+        title="Let's talk"
+        subtitle="Tell us about your project. Design, construction, materials or real estate, we respond within hours."
+        image="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1800&q=80"
+        crumbs={[{ label: "Home" }, { label: "Contact" }]}
+      />
+      <div className="mx-auto max-w-6xl px-4 py-12">
+
 
       <div className="mt-8 grid gap-8 lg:grid-cols-3">
         <div className="space-y-4 lg:col-span-1">
