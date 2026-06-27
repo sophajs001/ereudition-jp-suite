@@ -80,6 +80,8 @@ function Services() {
           ))}
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }
+
