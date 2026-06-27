@@ -49,6 +49,8 @@ function Blog() {
           </Link>
         ))}
       </div>
-    </div>
+      </div>
+    </>
   );
 }
+
