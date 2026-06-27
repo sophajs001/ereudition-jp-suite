@@ -67,7 +67,7 @@ function Home() {
       </section>
 
       {/* STATS */}
-      <section className="mx-auto -mt-12 max-w-6xl px-4">
+      <section className="relative z-20 mx-auto mt-6 max-w-6xl px-4 md:-mt-12">
         <div className="grid grid-cols-2 gap-4 rounded-2xl border border-gray-100 bg-white p-6 shadow-xl md:grid-cols-4">
           {[["150+", "Projects Completed"], ["10+", "Years Experience"], ["200+", "Happy Clients"], ["30+", "Properties Listed"]].map(([n, l]) => (
             <div key={l} className="text-center">
