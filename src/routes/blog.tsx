@@ -4,7 +4,7 @@ import { blogPosts } from "@/data/company";
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
-      { title: "Blog — Erudition JP Enterprise" },
+      { title: "Blog ,  Erudition JP Enterprise" },
       { name: "description", content: "Practical guides on construction, materials and real estate in Abuja." },
       { property: "og:title", content: "Erudition JP Blog" },
       { property: "og:description", content: "Insights from our team for builders, buyers and investors." },
@@ -26,7 +26,7 @@ function Blog() {
           <div className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: "#0056b3" }}>{featured.category}</div>
           <h2 className="mt-2 text-2xl font-bold">{featured.title}</h2>
           <p className="mt-2 text-sm text-gray-600">{featured.excerpt}</p>
-          <div className="mt-4 text-xs text-gray-500">{featured.author} • {featured.readTime} read</div>
+          <div className="mt-4 text-xs text-gray-500">{featured.author} · {featured.readTime} read</div>
         </div>
       </Link>
 
@@ -36,7 +36,7 @@ function Blog() {
             <div className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: "#0056b3" }}>{p.category}</div>
             <h3 className="mt-2 text-base font-bold">{p.title}</h3>
             <p className="mt-2 text-sm text-gray-600">{p.excerpt}</p>
-            <div className="mt-3 text-xs text-gray-500">{p.author} • {p.readTime} read</div>
+            <div className="mt-3 text-xs text-gray-500">{p.author} · {p.readTime} read</div>
           </Link>
         ))}
       </div>

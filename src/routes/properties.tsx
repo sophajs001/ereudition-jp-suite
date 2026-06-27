@@ -5,7 +5,7 @@ import { properties, waLink } from "@/data/company";
 export const Route = createFileRoute("/properties")({
   head: () => ({
     meta: [
-      { title: "Properties — Erudition JP Enterprise" },
+      { title: "Properties ,  Erudition JP Enterprise" },
       { name: "description", content: "Verified land, residential and commercial properties for sale in Abuja FCT." },
       { property: "og:title", content: "Properties for Sale in Abuja" },
       { property: "og:description", content: "Browse our verified property listings across the FCT." },
@@ -56,7 +56,7 @@ function Properties() {
               <div className="mt-3 flex flex-wrap gap-1.5">
                 {p.tags.map((t) => <span key={t} className="rounded-full bg-[#EFF6FF] px-2 py-0.5 text-[10px] font-semibold" style={{ color: "#0056b3" }}>{t}</span>)}
               </div>
-              <a href={waLink(`Hello Erudition JP — I'm interested in: ${p.title} at ${p.location} (${p.price}).`)} target="_blank" rel="noopener noreferrer" className="mt-4 block rounded-xl py-2.5 text-center text-sm font-bold text-white" style={{ background: "#25D366" }}>Enquire About This Property</a>
+              <a href={waLink(`Hello Erudition JP ,  I'm interested in: ${p.title} at ${p.location} (${p.price}).`)} target="_blank" rel="noopener noreferrer" className="mt-4 block rounded-xl py-2.5 text-center text-sm font-bold text-white" style={{ background: "#25D366" }}>Enquire About This Property</a>
             </div>
           </div>
         ))}
@@ -65,7 +65,7 @@ function Properties() {
       <div className="mt-12 rounded-2xl p-8 text-center text-white" style={{ background: "linear-gradient(135deg, #003d82, #0056b3)" }}>
         <h2 className="text-2xl font-bold">Don't see what you want?</h2>
         <p className="mt-2 text-sm text-white/80">Tell us what you're looking for and we'll source it for you.</p>
-        <a href={waLink("Hello Erudition JP — I'm looking for a specific property.")} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex rounded-xl bg-white px-6 py-3 text-sm font-bold" style={{ color: "#0056b3" }}>Tell Us On WhatsApp</a>
+        <a href={waLink("Hello Erudition JP ,  I'm looking for a specific property.")} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex rounded-xl bg-white px-6 py-3 text-sm font-bold" style={{ color: "#0056b3" }}>Tell Us On WhatsApp</a>
       </div>
     </div>
   );

@@ -5,20 +5,20 @@ import { company, services, testimonials, waLink } from "@/data/company";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Erudition JP Enterprise — Build Your Dreams in Abuja" },
+      { title: "Erudition JP Enterprise ,  Build Your Dreams in Abuja" },
       { name: "description", content: "Trusted design, construction, real estate and materials in Abuja FCT. 150+ projects. 10+ years." },
       { property: "og:title", content: "Erudition JP Enterprise" },
-      { property: "og:description", content: "We build your dreams — Abuja's reliable construction partner." },
+      { property: "og:description", content: "We build your dreams ,  Abuja's reliable construction partner." },
     ],
   }),
   component: Home,
 });
 
 const slides = [
-  { tag: "Nigeria's Trusted Construction Partner", h1: "We Build Your Dreams", h2: "With Precision.", cta: { label: "Get a Free Quote", href: waLink("Hello Erudition JP — I'd like a free quote.") }, bg: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&q=80" },
+  { tag: "Nigeria's Trusted Construction Partner", h1: "We Build Your Dreams", h2: "With Precision.", cta: { label: "Get a Free Quote", href: waLink("Hello Erudition JP ,  I'd like a free quote.") }, bg: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&q=80" },
   { tag: "Architectural Design Excellence", h1: "Beautiful Designs,", h2: "Built to Last.", cta: { label: "Explore Our Designs", href: "/services" }, bg: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1600&q=80" },
   { tag: "Real Estate & Property", h1: "Find Your Perfect", h2: "Property in Abuja.", cta: { label: "View Properties", href: "/properties" }, bg: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1600&q=80" },
-  { tag: "Quality Materials & Supply", h1: "Premium Materials,", h2: "Delivered to Your Site.", cta: { label: "Talk to Us", href: waLink("Hello Erudition JP — I'd like to enquire about materials.") }, bg: "https://images.unsplash.com/photo-1581094289810-adf5d25690e3?w=1600&q=80" },
+  { tag: "Quality Materials & Supply", h1: "Premium Materials,", h2: "Delivered to Your Site.", cta: { label: "Talk to Us", href: waLink("Hello Erudition JP ,  I'd like to enquire about materials.") }, bg: "https://images.unsplash.com/photo-1581094289810-adf5d25690e3?w=1600&q=80" },
 ];
 
 function Home() {
@@ -46,7 +46,7 @@ function Home() {
             {s.h1}<br />
             <span style={{ color: "#93c5fd" }}>{s.h2}</span>
           </h1>
-          <p className="mt-4 max-w-xl text-sm text-white/80">Design, construction, materials and verified real estate — delivered with integrity and on time, across Abuja FCT.</p>
+          <p className="mt-4 max-w-xl text-sm text-white/80">Design, construction, materials and verified real estate ,  delivered with integrity and on time, across Abuja FCT.</p>
           <div className="mt-6 flex flex-wrap gap-3">
             {isExternal ? (
               <a href={s.cta.href} target="_blank" rel="noopener noreferrer" className="rounded-xl bg-white px-7 py-3 text-sm font-bold" style={{ color: "#0056b3" }}>{s.cta.label} →</a>
@@ -92,7 +92,7 @@ function Home() {
               <p className="mt-1 text-xs font-semibold" style={{ color: "#0056b3" }}>{s.tag}</p>
               <p className="mt-3 text-sm text-gray-600">{s.summary}</p>
               <ul className="mt-3 space-y-1 text-xs text-gray-500">
-                {s.items.slice(0, 3).map((i) => <li key={i}>• {i}</li>)}
+                {s.items.slice(0, 3).map((i) => <li key={i}>· {i}</li>)}
               </ul>
               <div className="mt-4 text-sm font-semibold group-hover:underline" style={{ color: "#0056b3" }}>Learn more →</div>
             </Link>
@@ -108,16 +108,16 @@ function Home() {
           </div>
           <div>
             <div className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: "#0056b3" }}>Why Choose Us</div>
-            <h2 className="mt-2 text-3xl font-bold">Don't struggle alone — let us help you build right.</h2>
+            <h2 className="mt-2 text-3xl font-bold">Don't struggle alone ,  let us help you build right.</h2>
             <ul className="mt-6 space-y-4">
-              {["Academic & Practical Expertise — degree-trained and site-trained since 1992", "Timely delivery on every milestone", "200+ satisfied clients across the FCT"].map((t) => (
+              {["Academic & Practical Expertise ,  degree-trained and site-trained since 1992", "Timely delivery on every milestone", "200+ satisfied clients across the FCT"].map((t) => (
                 <li key={t} className="flex gap-3 text-sm text-gray-700">
                   <span className="mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full text-white" style={{ background: "#0056b3" }}>✓</span>
                   {t}
                 </li>
               ))}
             </ul>
-            <a href={waLink("Hello Erudition JP — I want to discuss a project.")} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex rounded-xl px-6 py-3 text-sm font-semibold text-white" style={{ background: "#0056b3" }}>Talk to Us →</a>
+            <a href={waLink("Hello Erudition JP ,  I want to discuss a project.")} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex rounded-xl px-6 py-3 text-sm font-semibold text-white" style={{ background: "#0056b3" }}>Talk to Us →</a>
           </div>
         </div>
       </section>
@@ -165,9 +165,9 @@ function Home() {
       <section className="mx-auto max-w-5xl px-4 pb-20">
         <div className="rounded-3xl p-10 text-center text-white" style={{ background: "linear-gradient(135deg, #003d82, #0056b3, #1a73c8)" }}>
           <h2 className="text-3xl font-bold">Ready to Build Something Great?</h2>
-          <p className="mt-2 text-sm text-white/80">Tell us about your project — we'll respond within hours.</p>
+          <p className="mt-2 text-sm text-white/80">Tell us about your project ,  we'll respond within hours.</p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <a href={waLink("Hello Erudition JP — let's discuss my project.")} target="_blank" rel="noopener noreferrer" className="rounded-xl px-6 py-3 text-sm font-bold text-white" style={{ background: "#25D366" }}>Chat on WhatsApp</a>
+            <a href={waLink("Hello Erudition JP ,  let's discuss my project.")} target="_blank" rel="noopener noreferrer" className="rounded-xl px-6 py-3 text-sm font-bold text-white" style={{ background: "#25D366" }}>Chat on WhatsApp</a>
             <a href={`tel:${company.phones[0]}`} className="rounded-xl bg-white px-6 py-3 text-sm font-bold" style={{ color: "#0056b3" }}>Call {company.phones[0]}</a>
           </div>
         </div>

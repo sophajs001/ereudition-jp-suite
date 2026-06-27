@@ -9,7 +9,7 @@ export const Route = createFileRoute("/blog/$slug")({
   },
   head: ({ loaderData }) => ({
     meta: loaderData ? [
-      { title: `${loaderData.title} — Erudition JP Blog` },
+      { title: `${loaderData.title} ,  Erudition JP Blog` },
       { name: "description", content: loaderData.excerpt },
       { property: "og:title", content: loaderData.title },
       { property: "og:description", content: loaderData.excerpt },
@@ -33,15 +33,15 @@ function Post() {
       <Link to="/blog" className="text-xs font-semibold" style={{ color: "#0056b3" }}>← Back to blog</Link>
       <div className="mt-4 text-[10px] font-semibold uppercase tracking-widest" style={{ color: "#0056b3" }}>{post.category}</div>
       <h1 className="mt-2 text-3xl font-bold md:text-4xl">{post.title}</h1>
-      <div className="mt-3 text-xs text-gray-500">{post.author} • {post.readTime} read</div>
+      <div className="mt-3 text-xs text-gray-500">{post.author} · {post.readTime} read</div>
       <p className="mt-6 text-base text-gray-700">{post.excerpt}</p>
       <div className="mt-6 space-y-4 text-sm leading-relaxed text-gray-700">
         {post.body.map((p: string, i: number) => <p key={i}>{p}</p>)}
       </div>
       <div className="mt-10 rounded-2xl p-6 text-white" style={{ background: "linear-gradient(135deg, #003d82, #0056b3)" }}>
         <div className="text-lg font-bold">Have questions on this topic?</div>
-        <p className="mt-1 text-sm text-white/80">Chat with our team on WhatsApp — we respond fast.</p>
-        <a href={waLink(`Hello Erudition JP — I read "${post.title}" and have a question.`)} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex rounded-xl px-5 py-2.5 text-sm font-bold" style={{ background: "#25D366" }}>Chat on WhatsApp</a>
+        <p className="mt-1 text-sm text-white/80">Chat with our team on WhatsApp ,  we respond fast.</p>
+        <a href={waLink(`Hello Erudition JP ,  I read "${post.title}" and have a question.`)} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex rounded-xl px-5 py-2.5 text-sm font-bold" style={{ background: "#25D366" }}>Chat on WhatsApp</a>
       </div>
       <div className="mt-12">
         <h2 className="text-lg font-bold">Related articles</h2>

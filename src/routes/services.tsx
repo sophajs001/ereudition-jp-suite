@@ -5,10 +5,10 @@ import { services, waLink } from "@/data/company";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Erudition JP Enterprise" },
+      { title: "Services ,  Erudition JP Enterprise" },
       { name: "description", content: "Design & Construction, Consultancy & Planning, Materials & Supply, and Real Estate services in Abuja." },
       { property: "og:title", content: "Our Services" },
-      { property: "og:description", content: "Four service pillars — designed and delivered by Erudition JP." },
+      { property: "og:description", content: "Four service pillars ,  designed and delivered by Erudition JP." },
     ],
   }),
   component: Services,
@@ -27,7 +27,7 @@ function Services() {
     <div className="mx-auto max-w-6xl px-4 py-12">
       <div className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: "#0056b3" }}>Services</div>
       <h1 className="mt-2 text-3xl font-bold md:text-4xl">Four pillars. One reliable partner.</h1>
-      <p className="mt-3 max-w-2xl text-sm text-gray-600">From the first sketch to the final brick — and every material, document and decision in between.</p>
+      <p className="mt-3 max-w-2xl text-sm text-gray-600">From the first sketch to the final brick ,  and every material, document and decision in between.</p>
 
       <div className="mt-8 space-y-4">
         {services.map((s) => {
@@ -51,7 +51,7 @@ function Services() {
                     ))}
                   </ul>
                   <div className="mt-5 flex flex-wrap gap-3">
-                    <a href={waLink(`Hello Erudition JP — I'd like to enquire about ${s.title}.`)} target="_blank" rel="noopener noreferrer" className="rounded-xl px-5 py-2.5 text-sm font-semibold text-white" style={{ background: color }}>Enquire on WhatsApp</a>
+                    <a href={waLink(`Hello Erudition JP ,  I'd like to enquire about ${s.title}.`)} target="_blank" rel="noopener noreferrer" className="rounded-xl px-5 py-2.5 text-sm font-semibold text-white" style={{ background: color }}>Enquire on WhatsApp</a>
                   </div>
                 </div>
               )}

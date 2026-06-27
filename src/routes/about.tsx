@@ -5,7 +5,7 @@ import { team, faqs } from "@/data/company";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Erudition JP Enterprise" },
+      { title: "About ,  Erudition JP Enterprise" },
       { name: "description", content: "Our story, leadership, vision & mission. Erudition JP = Judemary + Prisca." },
       { property: "og:title", content: "About Erudition JP Enterprise" },
       { property: "og:description", content: "Our story, leadership team and values." },
@@ -32,12 +32,12 @@ function About() {
     <div className="mx-auto max-w-5xl px-4 py-12">
       <div className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: "#0056b3" }}>About Us</div>
       <h1 className="mt-2 text-3xl font-bold md:text-4xl">Erudition JP Enterprise</h1>
-      <p className="mt-3 text-sm text-gray-600">JP = Judemary + Prisca — two names, one vision: building Nigerian dreams with integrity, precision and trust.</p>
+      <p className="mt-3 text-sm text-gray-600">JP = Judemary + Prisca ,  two names, one vision: building Nigerian dreams with integrity, precision and trust.</p>
 
       <div className="mt-8 space-y-4">
         <Accordion title="Our History & Story" defaultOpen>
           <p>Erudition JP Enterprise was founded by <strong>Onyeke Judemary O.</strong> and <strong>Prisca</strong> to bridge academic knowledge and practical construction realities in Nigeria.</p>
-          <p className="mt-3"><strong>Our CEO is a professional Building graduate from the University of Jos and a Graduate Member of the Nigerian Institute of Building (GNIOB).</strong> His masonry journey began in 1992 — long before formal study — and he continued hands-on site work all through his university years (from 2019) to fund his education. The result is rare: deep practical mastery <em>and</em> rigorous theoretical training, from the trowel up.</p>
+          <p className="mt-3"><strong>Our CEO is a professional Building graduate from the University of Jos and a Graduate Member of the Nigerian Institute of Building (GNIOB).</strong> His masonry journey began in 1992 ,  long before formal study ,  and he continued hands-on site work all through his university years (from 2019) to fund his education. The result is rare: deep practical mastery <em>and</em> rigorous theoretical training, from the trowel up.</p>
           <p className="mt-3">Our COO, Mrs. Prisca Aliyu, is a <strong>Pure Mathematics graduate from Plateau State University, Bokkos</strong>, bringing analytical rigour to every project, contract and budget.</p>
           <p className="mt-3">From humble Abuja beginnings, we have grown to deliver 150+ projects across the FCT and beyond, anchored in four pillars: Design & Construction, Consultancy & Planning, Materials & Supply, and Real Estate.</p>
           <div className="mt-4 grid grid-cols-3 gap-3 text-center">
@@ -100,14 +100,14 @@ function About() {
 
         <Accordion title="Privacy Policy">
           <ol className="list-decimal space-y-2 pl-5">
-            <li><strong>Information We Collect</strong> — name, phone, email and project details you share with us.</li>
-            <li><strong>How We Use It</strong> — to respond to enquiries and prepare proposals.</li>
-            <li><strong>Information Sharing</strong> — never sold; shared only with project contractors as needed.</li>
-            <li><strong>Data Security</strong> — secure storage and restricted access.</li>
-            <li><strong>Communication</strong> — by contacting us you consent to a reply via your chosen channel.</li>
-            <li><strong>Third-Party Links</strong> — we are not responsible for external sites we link to.</li>
-            <li><strong>Your Rights</strong> — you can access, correct or request deletion of your data.</li>
-            <li><strong>Privacy queries</strong> — eruditionjpenterprise@gmail.com</li>
+            <li><strong>Information We Collect</strong> ,  name, phone, email and project details you share with us.</li>
+            <li><strong>How We Use It</strong> ,  to respond to enquiries and prepare proposals.</li>
+            <li><strong>Information Sharing</strong> ,  never sold; shared only with project contractors as needed.</li>
+            <li><strong>Data Security</strong> ,  secure storage and restricted access.</li>
+            <li><strong>Communication</strong> ,  by contacting us you consent to a reply via your chosen channel.</li>
+            <li><strong>Third-Party Links</strong> ,  we are not responsible for external sites we link to.</li>
+            <li><strong>Your Rights</strong> ,  you can access, correct or request deletion of your data.</li>
+            <li><strong>Privacy queries</strong> ,  eruditionjpenterprise@gmail.com</li>
           </ol>
         </Accordion>
 

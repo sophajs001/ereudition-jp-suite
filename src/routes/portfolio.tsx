@@ -5,7 +5,7 @@ import { waLink } from "@/data/company";
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
-      { title: "Portfolio — Erudition JP Enterprise" },
+      { title: "Portfolio ,  Erudition JP Enterprise" },
       { name: "description", content: "Selected projects from our 150+ delivered builds across Abuja." },
       { property: "og:title", content: "Our Portfolio" },
       { property: "og:description", content: "Recent design and construction projects." },
@@ -49,7 +49,7 @@ function Portfolio() {
               <div className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: "#0056b3" }}>{p.cat}</div>
               <h3 className="mt-1 text-base font-bold">{p.title}</h3>
               <div className="mt-1 text-xs text-gray-500">📍 {p.loc}</div>
-              <a href={waLink(`Hello Erudition JP — I'd like to know more about your ${p.title} project.`)} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex text-sm font-semibold" style={{ color: "#0056b3" }}>Enquire on WhatsApp →</a>
+              <a href={waLink(`Hello Erudition JP ,  I'd like to know more about your ${p.title} project.`)} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex text-sm font-semibold" style={{ color: "#0056b3" }}>Enquire on WhatsApp →</a>
             </div>
           </div>
         ))}

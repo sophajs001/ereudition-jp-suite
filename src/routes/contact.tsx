@@ -5,10 +5,10 @@ import { company, waLink } from "@/data/company";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Erudition JP Enterprise" },
+      { title: "Contact ,  Erudition JP Enterprise" },
       { name: "description", content: "Reach Erudition JP via WhatsApp, phone or email. Ushafa Bwari, Abuja." },
       { property: "og:title", content: "Contact Erudition JP" },
-      { property: "og:description", content: "Talk to us — we respond within hours." },
+      { property: "og:description", content: "Talk to us ,  we respond within hours." },
     ],
   }),
   component: Contact,
@@ -28,7 +28,7 @@ function Contact() {
     <div className="mx-auto max-w-6xl px-4 py-12">
       <div className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: "#0056b3" }}>Contact</div>
       <h1 className="mt-2 text-3xl font-bold md:text-4xl">Let's talk</h1>
-      <p className="mt-3 max-w-2xl text-sm text-gray-600">Tell us about your project — design, construction, materials, or real estate. We'll respond within hours.</p>
+      <p className="mt-3 max-w-2xl text-sm text-gray-600">Tell us about your project ,  design, construction, materials, or real estate. We'll respond within hours.</p>
 
       <div className="mt-8 grid gap-8 lg:grid-cols-3">
         <div className="space-y-4 lg:col-span-1">
@@ -50,7 +50,7 @@ function Contact() {
             <div className="text-sm font-bold">Hours</div>
             <p className="mt-2 text-sm text-gray-600">🕐 {company.hours}</p>
           </div>
-          <a href={waLink("Hello Erudition JP — I'd like to chat live.")} target="_blank" rel="noopener noreferrer" className="block rounded-2xl p-5 text-white" style={{ background: "#25D366" }}>
+          <a href={waLink("Hello Erudition JP ,  I'd like to chat live.")} target="_blank" rel="noopener noreferrer" className="block rounded-2xl p-5 text-white" style={{ background: "#25D366" }}>
             <div className="text-sm font-bold">Prefer live chat?</div>
             <div className="mt-1 text-xs opacity-90">Chat with us instantly on WhatsApp →</div>
           </a>
