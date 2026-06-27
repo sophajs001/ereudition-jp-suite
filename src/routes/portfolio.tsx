@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { waLink } from "@/data/company";
+import { PageHero } from "@/components/PageHero";
+
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
