@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { properties, waLink } from "@/data/company";
+import { PageHero } from "@/components/PageHero";
+import { BookATourForm } from "@/components/BookATourForm";
 
 export const Route = createFileRoute("/properties")({
   head: () => ({
@@ -22,12 +24,19 @@ const propImages: Record<string, string> = {
 
 function Properties() {
   const [filter, setFilter] = useState<string>("All");
+  const [selected, setSelected] = useState<(typeof properties)[number] | null>(null);
   const list = filter === "All" ? properties : properties.filter((p) => p.type === filter);
   return (
-    <div className="mx-auto max-w-7xl px-4 py-12">
-      <div className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: "#0056b3" }}>Properties</div>
-      <h1 className="mt-2 text-3xl font-bold md:text-4xl">Verified properties across the FCT</h1>
-      <p className="mt-3 max-w-2xl text-sm text-gray-600">Every listing is title-searched, survey-confirmed and ready for inspection.</p>
+    <>
+      <PageHero
+        eyebrow="Properties"
+        title="Verified properties across the FCT"
+        subtitle="Every listing is title searched, survey confirmed and ready for inspection."
+        image="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1800&q=80"
+        crumbs={[{ label: "Home" }, { label: "Properties" }]}
+      />
+      <div className="mx-auto max-w-7xl px-4 py-12">
+
 
       <div className="mt-6 flex flex-wrap gap-2">
         {["All", "Residential", "Land", "Commercial"].map((t) => (
