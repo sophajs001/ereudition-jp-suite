@@ -36,7 +36,7 @@ function Post() {
       <div className="mt-3 text-xs text-gray-500">{post.author} • {post.readTime} read</div>
       <p className="mt-6 text-base text-gray-700">{post.excerpt}</p>
       <div className="mt-6 space-y-4 text-sm leading-relaxed text-gray-700">
-        {post.body.map((p, i) => <p key={i}>{p}</p>)}
+        {post.body.map((p: string, i: number) => <p key={i}>{p}</p>)}
       </div>
       <div className="mt-10 rounded-2xl p-6 text-white" style={{ background: "linear-gradient(135deg, #003d82, #0056b3)" }}>
         <div className="text-lg font-bold">Have questions on this topic?</div>
