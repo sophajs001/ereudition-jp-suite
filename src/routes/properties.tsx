@@ -65,17 +65,55 @@ function Properties() {
               <div className="mt-3 flex flex-wrap gap-1.5">
                 {p.tags.map((t) => <span key={t} className="rounded-full bg-[#EFF6FF] px-2 py-0.5 text-[10px] font-semibold" style={{ color: "#0056b3" }}>{t}</span>)}
               </div>
-              <a href={waLink(`Hello Erudition JP ,  I'm interested in: ${p.title} at ${p.location} (${p.price}).`)} target="_blank" rel="noopener noreferrer" className="mt-4 block rounded-xl py-2.5 text-center text-sm font-bold text-white" style={{ background: "#0056b3" }}>Enquire About This Property</a>
+              <div className="mt-4 grid grid-cols-2 gap-2">
+                <button
+                  onClick={() => { setSelected(p); document.getElementById("book-tour")?.scrollIntoView({ behavior: "smooth" }); }}
+                  className="rounded-xl py-2.5 text-center text-xs font-bold text-white"
+                  style={{ background: "#0056b3" }}
+                >
+                  Book a Tour
+                </button>
+                <a
+                  href={waLink(`Hello Erudition JP, I'm interested in: ${p.title} at ${p.location} (${p.price}).`)}
+                  target="_blank" rel="noopener noreferrer"
+                  className="rounded-xl border py-2.5 text-center text-xs font-bold"
+                  style={{ borderColor: "#0056b3", color: "#0056b3" }}
+                >
+                  Enquire
+                </a>
+              </div>
             </div>
           </div>
         ))}
       </div>
 
+      <section id="book-tour" className="mt-16 grid gap-8 lg:grid-cols-5">
+        <div className="lg:col-span-2">
+          <div className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: "#0056b3" }}>Book a Tour</div>
+          <h2 className="mt-2 text-2xl font-bold md:text-3xl">See it for yourself</h2>
+          <p className="mt-3 text-sm text-gray-600">
+            Pick a property, choose a date and time that works for you, and our team will confirm your viewing on WhatsApp within hours.
+          </p>
+          {selected && (
+            <div className="mt-5 rounded-2xl border border-gray-100 bg-[#F8FAFF] p-4 text-sm">
+              <div className="font-bold" style={{ color: "#0056b3" }}>Selected:</div>
+              <div className="mt-1">{selected.title}</div>
+              <div className="text-xs text-gray-500">{selected.location} · {selected.price}</div>
+            </div>
+          )}
+        </div>
+        <div className="lg:col-span-3">
+          <BookATourForm property={selected ? { title: selected.title, location: selected.location, price: selected.price } : undefined} />
+        </div>
+      </section>
+
       <div className="mt-12 rounded-2xl p-8 text-center text-white" style={{ background: "linear-gradient(135deg, #003d82, #0056b3)" }}>
         <h2 className="text-2xl font-bold">Don't see what you want?</h2>
         <p className="mt-2 text-sm text-white/80">Tell us what you're looking for and we'll source it for you.</p>
-        <a href={waLink("Hello Erudition JP ,  I'm looking for a specific property.")} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex rounded-xl bg-white px-6 py-3 text-sm font-bold" style={{ color: "#0056b3" }}>Tell Us On WhatsApp</a>
+        <a href={waLink("Hello Erudition JP, I'm looking for a specific property.")} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex rounded-xl bg-white px-6 py-3 text-sm font-bold" style={{ color: "#0056b3" }}>Tell Us On WhatsApp</a>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
+
