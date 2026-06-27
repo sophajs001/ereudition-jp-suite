@@ -30,10 +30,16 @@ function Portfolio() {
   const [cat, setCat] = useState("All");
   const list = cat === "All" ? projects : projects.filter((p) => p.cat === cat);
   return (
-    <div className="mx-auto max-w-7xl px-4 py-12">
-      <div className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: "#0056b3" }}>Portfolio</div>
-      <h1 className="mt-2 text-3xl font-bold md:text-4xl">Selected projects</h1>
-      <p className="mt-3 max-w-2xl text-sm text-gray-600">A small window into what we've built. Reach out for full case studies.</p>
+    <>
+      <PageHero
+        eyebrow="Portfolio"
+        title="Selected projects"
+        subtitle="A small window into what we have built. Reach out for full case studies."
+        image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1800&q=80"
+        crumbs={[{ label: "Home" }, { label: "Portfolio" }]}
+      />
+      <div className="mx-auto max-w-7xl px-4 py-12">
+
 
       <div className="mt-6 flex flex-wrap gap-2">
         {cats.map((c) => (
