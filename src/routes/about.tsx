@@ -31,12 +31,17 @@ function Accordion({ title, defaultOpen, children }: { title: string; defaultOpe
 
 function About() {
   return (
-    <div className="mx-auto max-w-5xl px-4 py-12">
-      <div className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: "#0056b3" }}>About Us</div>
-      <h1 className="mt-2 text-3xl font-bold md:text-4xl">Erudition JP Enterprise</h1>
-      <p className="mt-3 text-sm text-gray-600">JP = Judemary + Prisca ,  two names, one vision: building Nigerian dreams with integrity, precision and trust.</p>
+    <>
+      <PageHero
+        eyebrow="About Us"
+        title="Erudition JP Enterprise"
+        subtitle="JP stands for Judemary and Prisca. Two names, one vision: building Nigerian dreams with integrity, precision and trust."
+        image="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1800&q=80"
+        crumbs={[{ label: "Home" }, { label: "About" }]}
+      />
+      <div className="mx-auto max-w-5xl px-4 py-12">
+        <div className="mt-2 space-y-4">
 
-      <div className="mt-8 space-y-4">
         <Accordion title="Our History & Story" defaultOpen>
           <p>Erudition JP Enterprise was founded by <strong>Onyeke Judemary O.</strong> and <strong>Prisca</strong> to bridge academic knowledge and practical construction realities in Nigeria.</p>
           <p className="mt-3"><strong>Our CEO is a professional Building graduate from the University of Jos and a Graduate Member of the Nigerian Institute of Building (GNIOB).</strong> His masonry journey began in 1992 ,  long before formal study ,  and he continued hands-on site work all through his university years (from 2019) to fund his education. The result is rare: deep practical mastery <em>and</em> rigorous theoretical training, from the trowel up.</p>
