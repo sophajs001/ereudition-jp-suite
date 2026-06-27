@@ -99,6 +99,8 @@ function Contact() {
           loading="lazy"
         />
       </div>
-    </div>
+      </div>
+    </>
   );
 }
+
