@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { services, waLink } from "@/data/company";
+import { PageHero } from "@/components/PageHero";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -24,10 +25,16 @@ const accents: Record<string, string> = {
 function Services() {
   const [open, setOpen] = useState<string>("design-construction");
   return (
-    <div className="mx-auto max-w-6xl px-4 py-12">
-      <div className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: "#0056b3" }}>Services</div>
-      <h1 className="mt-2 text-3xl font-bold md:text-4xl">Four pillars. One reliable partner.</h1>
-      <p className="mt-3 max-w-2xl text-sm text-gray-600">From the first sketch to the final brick ,  and every material, document and decision in between.</p>
+    <>
+      <PageHero
+        eyebrow="Our Services"
+        title="Four pillars, one reliable partner."
+        subtitle="From the first sketch to the final brick, including every material, document and decision in between."
+        image="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1800&q=80"
+        crumbs={[{ label: "Home" }, { label: "Services" }]}
+      />
+      <div className="mx-auto max-w-6xl px-4 py-12">
+
 
       <div className="mt-8 space-y-4">
         {services.map((s) => {
