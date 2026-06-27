@@ -94,7 +94,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <Loader />
       <Navbar />
-      <main className="min-h-[60vh]">
+      <main key={Math.random()} className="min-h-[60vh] ejp-fade-up">
         <Outlet />
       </main>
       <Footer />
