@@ -143,7 +143,9 @@ function About() {
             ))}
           </div>
         </Accordion>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
+
