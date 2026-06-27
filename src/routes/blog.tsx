@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { blogPosts } from "@/data/company";
+import { PageHero } from "@/components/PageHero";
+
 
 export const Route = createFileRoute("/blog")({
   head: () => ({
