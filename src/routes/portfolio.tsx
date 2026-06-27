@@ -1,11 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { waLink } from "@/data/company";
+import { PageHero } from "@/components/PageHero";
+
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
-      { title: "Portfolio — Erudition JP Enterprise" },
+      { title: "Portfolio ,  Erudition JP Enterprise" },
       { name: "description", content: "Selected projects from our 150+ delivered builds across Abuja." },
       { property: "og:title", content: "Our Portfolio" },
       { property: "og:description", content: "Recent design and construction projects." },
@@ -28,10 +30,16 @@ function Portfolio() {
   const [cat, setCat] = useState("All");
   const list = cat === "All" ? projects : projects.filter((p) => p.cat === cat);
   return (
-    <div className="mx-auto max-w-7xl px-4 py-12">
-      <div className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: "#0056b3" }}>Portfolio</div>
-      <h1 className="mt-2 text-3xl font-bold md:text-4xl">Selected projects</h1>
-      <p className="mt-3 max-w-2xl text-sm text-gray-600">A small window into what we've built. Reach out for full case studies.</p>
+    <>
+      <PageHero
+        eyebrow="Portfolio"
+        title="Selected projects"
+        subtitle="A small window into what we have built. Reach out for full case studies."
+        image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1800&q=80"
+        crumbs={[{ label: "Home" }, { label: "Portfolio" }]}
+      />
+      <div className="mx-auto max-w-7xl px-4 py-12">
+
 
       <div className="mt-6 flex flex-wrap gap-2">
         {cats.map((c) => (
@@ -49,11 +57,13 @@ function Portfolio() {
               <div className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: "#0056b3" }}>{p.cat}</div>
               <h3 className="mt-1 text-base font-bold">{p.title}</h3>
               <div className="mt-1 text-xs text-gray-500">📍 {p.loc}</div>
-              <a href={waLink(`Hello Erudition JP — I'd like to know more about your ${p.title} project.`)} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex text-sm font-semibold" style={{ color: "#0056b3" }}>Enquire on WhatsApp →</a>
+              <a href={waLink(`Hello Erudition JP ,  I'd like to know more about your ${p.title} project.`)} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex text-sm font-semibold" style={{ color: "#0056b3" }}>Enquire on WhatsApp →</a>
             </div>
           </div>
         ))}
       </div>
-    </div>
+      </div>
+    </>
   );
 }
+

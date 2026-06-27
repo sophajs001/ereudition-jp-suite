@@ -3,12 +3,14 @@ import { company } from "@/data/company";
 
 export function Loader() {
   const [visible, setVisible] = useState(true);
+  const [fading, setFading] = useState(false);
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     const i = setInterval(() => setProgress((p) => Math.min(100, p + 4)), 55);
-    const t = setTimeout(() => setVisible(false), 1700);
-    return () => { clearInterval(i); clearTimeout(t); };
+    const fadeT = setTimeout(() => setFading(true), 1500);
+    const t = setTimeout(() => setVisible(false), 2100);
+    return () => { clearInterval(i); clearTimeout(t); clearTimeout(fadeT); };
   }, []);
 
   if (!visible) return null;
@@ -16,7 +18,7 @@ export function Loader() {
   return (
     <div
       className="fixed inset-0 z-[100] flex items-center justify-center overflow-hidden transition-opacity duration-500"
-      style={{ background: "linear-gradient(135deg, #003d82 0%, #0056b3 45%, #1a73c8 100%)" }}
+      style={{ background: "linear-gradient(135deg, #003d82 0%, #0056b3 45%, #1a73c8 100%)", opacity: fading ? 0 : 1 }}
     >
       {Array.from({ length: 18 }).map((_, i) => {
         const size = 30 + ((i * 37) % 160);
