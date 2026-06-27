@@ -62,6 +62,8 @@ function Portfolio() {
           </div>
         ))}
       </div>
-    </div>
+      </div>
+    </>
   );
 }
+
