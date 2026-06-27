@@ -1,4 +1,4 @@
-import logo from "@/assets/logo.asset.json";
+import logoTransparent from "@/assets/logo-transparent.png";
 import jude from "@/assets/jude.asset.json";
 import prisca from "@/assets/prisca.asset.json";
 import ruth from "@/assets/ruth.asset.json";
@@ -15,8 +15,8 @@ export const company = {
   phones: ["08062655289", "08117004293", "07037910243"],
   whatsapp: "2348062655289",
   email: "eruditionjpenterprise@gmail.com",
-  hours: "Mon–Sat: 8:00 AM – 6:00 PM • Sunday: Closed",
-  logo: logo.url,
+  hours: "Mon to Sat: 8:00 AM to 6:00 PM. Sunday: Closed",
+  logo: logoTransparent,
 };
 
 export const waLink = (msg: string) =>
