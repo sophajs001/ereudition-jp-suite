@@ -50,7 +50,7 @@ function Contact() {
             <div className="text-sm font-bold">Hours</div>
             <p className="mt-2 text-sm text-gray-600">🕐 {company.hours}</p>
           </div>
-          <a href={waLink("Hello Erudition JP ,  I'd like to chat live.")} target="_blank" rel="noopener noreferrer" className="block rounded-2xl p-5 text-white" style={{ background: "#25D366" }}>
+          <a href={waLink("Hello Erudition JP ,  I'd like to chat live.")} target="_blank" rel="noopener noreferrer" className="block rounded-2xl p-5 text-white" style={{ background: "#0056b3" }}>
             <div className="text-sm font-bold">Prefer live chat?</div>
             <div className="mt-1 text-xs opacity-90">Chat with us instantly on WhatsApp →</div>
           </a>

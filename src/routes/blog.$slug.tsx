@@ -41,7 +41,7 @@ function Post() {
       <div className="mt-10 rounded-2xl p-6 text-white" style={{ background: "linear-gradient(135deg, #003d82, #0056b3)" }}>
         <div className="text-lg font-bold">Have questions on this topic?</div>
         <p className="mt-1 text-sm text-white/80">Chat with our team on WhatsApp ,  we respond fast.</p>
-        <a href={waLink(`Hello Erudition JP ,  I read "${post.title}" and have a question.`)} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex rounded-xl px-5 py-2.5 text-sm font-bold" style={{ background: "#25D366" }}>Chat on WhatsApp</a>
+        <a href={waLink(`Hello Erudition JP ,  I read "${post.title}" and have a question.`)} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex rounded-xl px-5 py-2.5 text-sm font-bold" style={{ background: "#0056b3" }}>Chat on WhatsApp</a>
       </div>
       <div className="mt-12">
         <h2 className="text-lg font-bold">Related articles</h2>

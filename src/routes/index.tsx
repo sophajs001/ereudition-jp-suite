@@ -167,7 +167,7 @@ function Home() {
           <h2 className="text-3xl font-bold">Ready to Build Something Great?</h2>
           <p className="mt-2 text-sm text-white/80">Tell us about your project ,  we'll respond within hours.</p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <a href={waLink("Hello Erudition JP ,  let's discuss my project.")} target="_blank" rel="noopener noreferrer" className="rounded-xl px-6 py-3 text-sm font-bold text-white" style={{ background: "#25D366" }}>Chat on WhatsApp</a>
+            <a href={waLink("Hello Erudition JP ,  let's discuss my project.")} target="_blank" rel="noopener noreferrer" className="rounded-xl px-6 py-3 text-sm font-bold text-white" style={{ background: "#0056b3" }}>Chat on WhatsApp</a>
             <a href={`tel:${company.phones[0]}`} className="rounded-xl bg-white px-6 py-3 text-sm font-bold" style={{ color: "#0056b3" }}>Call {company.phones[0]}</a>
           </div>
         </div>

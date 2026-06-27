@@ -56,7 +56,7 @@ function Properties() {
               <div className="mt-3 flex flex-wrap gap-1.5">
                 {p.tags.map((t) => <span key={t} className="rounded-full bg-[#EFF6FF] px-2 py-0.5 text-[10px] font-semibold" style={{ color: "#0056b3" }}>{t}</span>)}
               </div>
-              <a href={waLink(`Hello Erudition JP ,  I'm interested in: ${p.title} at ${p.location} (${p.price}).`)} target="_blank" rel="noopener noreferrer" className="mt-4 block rounded-xl py-2.5 text-center text-sm font-bold text-white" style={{ background: "#25D366" }}>Enquire About This Property</a>
+              <a href={waLink(`Hello Erudition JP ,  I'm interested in: ${p.title} at ${p.location} (${p.price}).`)} target="_blank" rel="noopener noreferrer" className="mt-4 block rounded-xl py-2.5 text-center text-sm font-bold text-white" style={{ background: "#0056b3" }}>Enquire About This Property</a>
             </div>
           </div>
         ))}
