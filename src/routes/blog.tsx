@@ -18,9 +18,16 @@ export const Route = createFileRoute("/blog")({
 function Blog() {
   const [featured, ...rest] = blogPosts;
   return (
-    <div className="mx-auto max-w-6xl px-4 py-12">
-      <div className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: "#0056b3" }}>Blog</div>
-      <h1 className="mt-2 text-3xl font-bold md:text-4xl">Insights & guides</h1>
+    <>
+      <PageHero
+        eyebrow="Blog"
+        title="Insights and guides"
+        subtitle="Practical advice from our team for builders, buyers and investors."
+        image="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1800&q=80"
+        crumbs={[{ label: "Home" }, { label: "Blog" }]}
+      />
+      <div className="mx-auto max-w-6xl px-4 py-12">
+
 
       <Link to="/blog/$slug" params={{ slug: featured.slug }} className="mt-8 grid overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm md:grid-cols-2">
         <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=900&q=80" alt="" className="h-full max-h-80 w-full object-cover" />
