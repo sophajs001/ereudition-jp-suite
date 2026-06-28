@@ -1,30 +1,29 @@
-# Hosting on a shared host (cPanel / Hostinger / Namecheap)
+# Hosting on a shared host (cPanel / Hostinger / Namecheap / any static host)
 
-This site is built with TanStack Start. The dev preview is dynamic, but you
-can export every page to plain HTML and upload to any cheap static host.
+Your site is built with TanStack Start. To deploy it on a plain shared host
+that only serves static files, run the export script below — it downloads
+every page from your live Lovable URL as a static HTML file plus all assets.
 
-## One-time setup (on your computer)
+## Step 1 — Publish on Lovable
 
-Install [Bun](https://bun.sh/), then in the project folder:
+In the Lovable editor, click **Publish → Update**. This makes your latest
+changes available at:
 
-```bash
-bun install
+```
+https://ereudition-jp-suite.lovable.app
 ```
 
-## Export the static site
+(Re-publish whenever you change the site.)
+
+## Step 2 — Export to static HTML
+
+Install [Bun](https://bun.sh/) once, then in the project folder run:
 
 ```bash
-# 1. Build the production bundle
-bun run build
-
-# 2. Start the local production server (leave this terminal open)
-bun run start
-
-# 3. In a SECOND terminal, run the static export
 bun scripts/export-static.mjs
 ```
 
-You now have a `static-site/` folder containing:
+This creates a `static-site/` folder:
 
 ```
 static-site/
@@ -36,18 +35,32 @@ static-site/
 ├── contact/index.html
 ├── blog/index.html
 ├── blog/<each-post>/index.html
-└── _build/ assets/ ...     ← CSS, JS, images, fonts
+└── _build/  assets/  ...   ← CSS, JS, images, fonts
 ```
 
-## Upload
+## Step 3 — Upload
 
-1. Open cPanel → File Manager → `public_html`.
-2. Upload the **CONTENTS** of `static-site/` (not the folder itself).
+1. Open cPanel → **File Manager → `public_html`**.
+2. Upload the **contents** of `static-site/` (not the folder itself).
 3. Visit your domain. `index.html` loads automatically.
 
-That's it. No Node, no database, no backend needed on the host.
+No Node, no database, no backend on the host. Pure static files.
+
+## Using a custom domain instead of the Lovable URL
+
+```bash
+BASE=https://your-domain.com bun scripts/export-static.mjs
+```
 
 ## Updating the site
 
-After making changes locally, re-run the three commands above and re-upload
-the new `static-site/` contents (overwrite).
+1. Edit in Lovable.
+2. Click **Publish → Update**.
+3. Re-run `bun scripts/export-static.mjs`.
+4. Re-upload the new `static-site/` contents (overwrite).
+
+## Why not just upload the `public/` folder?
+
+The `public/` folder in this project only contains the favicon and source
+assets — not the actual website. The compiled HTML for each page only
+exists after a build. The export script above produces that compiled HTML.
