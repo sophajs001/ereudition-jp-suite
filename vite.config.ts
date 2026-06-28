@@ -8,28 +8,8 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
   tanstackStart: {
+    // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
+    // nitro/vite builds from this
     server: { entry: "server" },
-    // Prerender every page to plain HTML so the built output can be hosted
-    // as a fully static website on any shared host (cPanel, Hostinger, etc.).
-    prerender: {
-      enabled: true,
-      crawlLinks: true,
-      // Seed the crawler with every page that exists in the app.
-      routes: [
-        "/",
-        "/about",
-        "/services",
-        "/properties",
-        "/portfolio",
-        "/blog",
-        "/contact",
-        "/blog/choosing-building-materials",
-        "/blog/land-ownership-abuja",
-        "/blog/sustainable-construction-nigeria",
-        "/blog/what-is-bill-of-quantities",
-        "/blog/choosing-contractor-abuja",
-        "/blog/real-estate-investment-abuja",
-      ],
-    },
   },
 });
