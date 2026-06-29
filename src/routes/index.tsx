@@ -104,7 +104,7 @@ function Home() {
       <section className="bg-gray-50 py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 md:grid-cols-2">
           <div>
-            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=900&q=80" alt="Build site" className="rounded-2xl shadow-lg" />
+            <img src={siteImages.siteVisit} alt="Erudition JP on site in Abuja" className="rounded-2xl shadow-lg" />
           </div>
           <div>
             <div className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: "#0056b3" }}>Why Choose Us</div>
