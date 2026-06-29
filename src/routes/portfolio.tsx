@@ -28,7 +28,7 @@ function Portfolio() {
         eyebrow="Portfolio"
         title="Selected projects"
         subtitle="A small window into what we have built. Reach out for full case studies."
-        image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1800&q=80"
+        image={siteImages.twoStoreyShell}
         crumbs={[{ label: "Home" }, { label: "Portfolio" }]}
       />
       <div className="mx-auto max-w-7xl px-4 py-12">
