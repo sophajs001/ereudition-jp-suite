@@ -6,6 +6,16 @@ import gloria from "@/assets/gloria.asset.json";
 import benedict from "@/assets/benedict.asset.json";
 import agnes from "@/assets/agnes.asset.json";
 import marcus from "@/assets/marcus.asset.json";
+import p08 from "@/assets/projects/IMG-20260629-WA0008.asset.json";
+import p14 from "@/assets/projects/IMG-20260629-WA0014.asset.json";
+import p17 from "@/assets/projects/IMG-20260629-WA0017.asset.json";
+import p25 from "@/assets/projects/IMG-20260629-WA0025.asset.json";
+import p27 from "@/assets/projects/IMG-20260629-WA0027.asset.json";
+import p38 from "@/assets/projects/IMG-20260629-WA0038.asset.json";
+import p65 from "@/assets/projects/IMG-20260629-WA0065.asset.json";
+import p79 from "@/assets/projects/IMG-20260629-WA0079.asset.json";
+import p92 from "@/assets/projects/IMG-20260629-WA0092.asset.json";
+import p93 from "@/assets/projects/IMG-20260629-WA0093.asset.json";
 
 export const company = {
   name: "Erudition JP Enterprise",
@@ -17,10 +27,40 @@ export const company = {
   email: "eruditionjpenterprise@gmail.com",
   hours: "Mon to Sat: 8:00 AM to 6:00 PM. Sunday: Closed",
   logo: logoTransparent,
+  socials: {
+    facebook: "https://www.facebook.com/profile.php?id=61589488031875",
+    instagram: "https://www.instagram.com/erudition_jp",
+  },
 };
 
 export const waLink = (msg: string) =>
   `https://wa.me/${company.whatsapp}?text=${encodeURIComponent(msg)}`;
+
+// Real site photography from active projects.
+export const siteImages = {
+  rooftopSlab: p08.url,
+  estateInspection: p14.url,
+  rebarColumn: p17.url,
+  slabReinforcement: p25.url,
+  drainageWork: p27.url,
+  siteVisit: p38.url,
+  surveyedLand: p65.url,
+  twoStoreyShell: p79.url,
+  decking: p92.url,
+  electricalConduits: p93.url,
+};
+
+export const projectGallery = [
+  { title: "Two-Storey Residential Shell", cat: "Residential", loc: "Bwari", img: p79.url, desc: "Block work and structural shell completion for a 2-storey home." },
+  { title: "Rooftop Decking & Slab Works", cat: "Residential", loc: "Ushafa", img: p92.url, desc: "Formwork and reinforcement for upper deck slab pour." },
+  { title: "Slab Reinforcement & BRC Mesh", cat: "Residential", loc: "Bwari", img: p25.url, desc: "Decking reinforcement ready for concrete pour over hillside site." },
+  { title: "Electrical Conduit & Slab Prep", cat: "Residential", loc: "Lokogoma", img: p93.url, desc: "Slab-level electrical conduit routing before concrete placement." },
+  { title: "Estate Project Supervision", cat: "Commercial", loc: "Abuja FCT", img: p14.url, desc: "Site supervision on a multi-block residential estate development." },
+  { title: "Drainage & Culvert Construction", cat: "Estate", loc: "Abuja FCT", img: p27.url, desc: "Reinforced drainage culvert under construction with site team." },
+  { title: "Foundation Inspection", cat: "Estate", loc: "Abuja FCT", img: p38.url, desc: "Pre-pour inspection of reinforced ground beams and pipe network." },
+  { title: "Column & Beam Construction", cat: "Residential", loc: "Bwari", img: p17.url, desc: "Stair-well column and beam formwork during structural frame stage." },
+  { title: "Surveyed Land Plot", cat: "Land", loc: "Bwari Outskirts", img: p65.url, desc: "Pegged and fenced plot with verified survey, ready for development." },
+];
 
 export const team = [
   {
