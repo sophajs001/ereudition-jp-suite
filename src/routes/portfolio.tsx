@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { waLink } from "@/data/company";
+import { waLink, projectGallery, siteImages } from "@/data/company";
 import { PageHero } from "@/components/PageHero";
 
 
@@ -16,14 +16,7 @@ export const Route = createFileRoute("/portfolio")({
   component: Portfolio,
 });
 
-const projects = [
-  { title: "3-Bedroom Bungalow", cat: "Residential", loc: "Ushafa Bwari", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" },
-  { title: "Commercial Office Block", cat: "Commercial", loc: "Wuse II", img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80" },
-  { title: "Duplex with BQ", cat: "Residential", loc: "Lokogoma", img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" },
-  { title: "Estate Layout & Roads", cat: "Estate", loc: "Karsana West", img: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=800&q=80" },
-  { title: "Renovation & Remodel", cat: "Renovation", loc: "Kubwa", img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80" },
-  { title: "Guest House", cat: "Commercial", loc: "Bwari", img: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80" },
-];
+const projects = projectGallery;
 
 function Portfolio() {
   const cats = ["All", ...Array.from(new Set(projects.map((p) => p.cat)))];
