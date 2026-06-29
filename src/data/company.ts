@@ -16,6 +16,11 @@ import p65 from "@/assets/projects/IMG-20260629-WA0065.asset.json";
 import p79 from "@/assets/projects/IMG-20260629-WA0079.asset.json";
 import p92 from "@/assets/projects/IMG-20260629-WA0092.asset.json";
 import p93 from "@/assets/projects/IMG-20260629-WA0093.asset.json";
+import pFoundation from "@/assets/projects/new/IMG-20260629-WA0000.jpg.asset.json";
+import pBrickShell from "@/assets/projects/new/IMG-20260629-WA0129.jpg.asset.json";
+import pBrickHouse from "@/assets/projects/new/IMG-20260629-WA0120.jpg.asset.json";
+import pFoundationCast from "@/assets/projects/new/IMG-20260626-WA0009.jpg.asset.json";
+import pDecking2 from "@/assets/projects/new/IMG-20260629-WA0092-2.jpg.asset.json";
 
 export const company = {
   name: "Erudition JP Enterprise",
@@ -30,6 +35,7 @@ export const company = {
   socials: {
     facebook: "https://www.facebook.com/profile.php?id=61589488031875",
     instagram: "https://www.instagram.com/erudition_jp",
+    tiktok: "https://vm.tiktok.com/ZS969mVfnTuJE-sOadg/",
   },
 };
 
