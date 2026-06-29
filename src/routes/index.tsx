@@ -122,6 +122,32 @@ function Home() {
         </div>
       </section>
 
+      {/* LIVE FROM OUR SITES */}
+      <section className="mx-auto max-w-7xl px-4 py-20">
+        <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <div className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: "#0056b3" }}>Live from our sites</div>
+            <h2 className="mt-2 text-3xl font-bold">Real projects, real progress.</h2>
+            <p className="mt-2 max-w-xl text-sm text-gray-600">A look at active and recently completed work across Abuja, captured by our project team.</p>
+          </div>
+          <Link to="/portfolio" className="rounded-xl px-5 py-2.5 text-sm font-semibold text-white" style={{ background: "#0056b3" }}>See full portfolio →</Link>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {projectGallery.slice(0, 6).map((p) => (
+            <div key={p.title} className="group overflow-hidden rounded-2xl bg-white shadow-sm">
+              <div className="relative h-60 overflow-hidden">
+                <img src={p.img} alt={p.title} className="h-full w-full object-cover transition duration-500 group-hover:scale-110" />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white">
+                  <div className="text-[10px] font-semibold uppercase tracking-widest text-white/80">{p.cat} · {p.loc}</div>
+                  <div className="text-sm font-bold">{p.title}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+
       {/* VISION/MISSION */}
       <section style={{ background: "#0056b3" }} className="py-16 text-white">
         <div className="mx-auto grid max-w-6xl gap-6 px-4 md:grid-cols-2">
