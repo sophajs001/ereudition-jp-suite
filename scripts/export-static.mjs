@@ -37,6 +37,9 @@ const PAGES = [
 
 const seenAssets = new Set();
 const ASSET_RE = /(?:href|src)="([^"]+)"/g;
+// Match any `/__l5e/assets-v1/<uuid>/<filename.ext>` reference (CDN asset URLs
+// referenced from inside the compiled JS bundles for team/project photos).
+const CDN_ASSET_RE = /\/__l5e\/assets-v1\/[a-f0-9-]+\/[A-Za-z0-9._-]+\.[A-Za-z0-9]{2,5}/g;
 
 function htmlPathFor(route) {
   if (route === "/") return join(OUT, "index.html");
