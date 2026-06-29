@@ -57,8 +57,12 @@ export const siteImages = {
 };
 
 export const projectGallery = [
+  { title: "Site Foundation Supervision", cat: "Residential", loc: "Bwari", img: pFoundation.url, desc: "Our CEO on site overseeing trench excavation and foundation setting out for a new build." },
+  { title: "Cast Strip Foundations", cat: "Residential", loc: "Ushafa", img: pFoundationCast.url, desc: "Freshly cast reinforced strip foundations cured and ready for block work." },
+  { title: "Brick Shell Construction", cat: "Residential", loc: "Bwari", img: pBrickHouse.url, desc: "Full brick shell and lintel level completion for a 3-bedroom residential home." },
+  { title: "Burnt Brick Wall Stack", cat: "Materials", loc: "Abuja FCT", img: pBrickShell.url, desc: "Premium burnt-brick wall construction ready for ring beam and roofing stage." },
+  { title: "Rooftop Decking & Slab Works", cat: "Residential", loc: "Lokogoma", img: pDecking2.url, desc: "Formwork, props and reinforcement set for upper-floor slab pour on a duplex." },
   { title: "Two-Storey Residential Shell", cat: "Residential", loc: "Bwari", img: p79.url, desc: "Block work and structural shell completion for a 2-storey home." },
-  { title: "Rooftop Decking & Slab Works", cat: "Residential", loc: "Ushafa", img: p92.url, desc: "Formwork and reinforcement for upper deck slab pour." },
   { title: "Slab Reinforcement & BRC Mesh", cat: "Residential", loc: "Bwari", img: p25.url, desc: "Decking reinforcement ready for concrete pour over hillside site." },
   { title: "Electrical Conduit & Slab Prep", cat: "Residential", loc: "Lokogoma", img: p93.url, desc: "Slab-level electrical conduit routing before concrete placement." },
   { title: "Estate Project Supervision", cat: "Commercial", loc: "Abuja FCT", img: p14.url, desc: "Site supervision on a multi-block residential estate development." },
