@@ -37,6 +37,9 @@ const PAGES = [
 
 const seenAssets = new Set();
 const ASSET_RE = /(?:href|src)="([^"]+)"/g;
+// Match any `/__l5e/assets-v1/<uuid>/<filename.ext>` reference (CDN asset URLs
+// referenced from inside the compiled JS bundles for team/project photos).
+const CDN_ASSET_RE = /\/__l5e\/assets-v1\/[a-f0-9-]+\/[A-Za-z0-9._-]+\.[A-Za-z0-9]{2,5}/g;
 
 function htmlPathFor(route) {
   if (route === "/") return join(OUT, "index.html");
@@ -96,6 +99,32 @@ async function processPage(route) {
   }
 }
 
+// After all pages are saved, scan the downloaded JS bundles for `/__l5e/`
+// CDN asset URLs (team photos, project photos, logo). Those URLs are
+// embedded inside the JavaScript chunks, not in the HTML, so the HTML
+// crawl above misses them and they 404 on shared hosting.
+async function harvestCdnAssetsFromBundles() {
+  const { readFile, readdir } = await import("node:fs/promises");
+  const walk = async (dir) => {
+    const out = [];
+    for (const e of await readdir(dir, { withFileTypes: true })) {
+      const p = join(dir, e.name);
+      if (e.isDirectory()) out.push(...(await walk(p)));
+      else if (/\.(js|css|html)$/i.test(e.name)) out.push(p);
+    }
+    return out;
+  };
+  const files = await walk(OUT);
+  const found = new Set();
+  for (const f of files) {
+    const text = await readFile(f, "utf8");
+    let m;
+    while ((m = CDN_ASSET_RE.exec(text)) !== null) found.add(m[0]);
+  }
+  console.log(`\nFound ${found.size} CDN asset(s) referenced from bundles.`);
+  for (const a of found) await saveAsset(a);
+}
+
 async function main() {
   console.log(`Exporting ${BASE} -> ./${OUT}\n`);
   await rm(OUT, { recursive: true, force: true });
@@ -105,6 +134,8 @@ async function main() {
     try { await processPage(route); }
     catch (err) { console.error(`✗ ${route} failed:`, err.message); }
   }
+
+  await harvestCdnAssetsFromBundles();
 
   console.log(`\n✅ Done. Upload the CONTENTS of ${OUT}/ to your host's public_html.`);
 }

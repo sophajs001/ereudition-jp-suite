@@ -24,13 +24,13 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-40 bg-white shadow-sm">
-      <div className="text-white" style={{ background: "#0056b3" }}>
+      <div className="hidden text-white md:block" style={{ background: "#0056b3" }}>
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-4 py-1.5 text-xs">
           <div className="flex flex-wrap items-center gap-4">
-            <span className="hidden sm:inline">📞 {company.phones[0]}</span>
+            <span>📞 {company.phones[0]}</span>
             <span>✉️ {company.email}</span>
           </div>
-          <span className="hidden italic opacity-80 md:inline">"{company.tagline}"</span>
+          <span className="italic opacity-80">"{company.tagline}"</span>
         </div>
       </div>
 

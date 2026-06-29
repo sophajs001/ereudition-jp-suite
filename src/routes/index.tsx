@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { company, services, testimonials, waLink } from "@/data/company";
+import { company, services, testimonials, waLink, siteImages, projectGallery } from "@/data/company";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -15,10 +15,10 @@ export const Route = createFileRoute("/")({
 });
 
 const slides = [
-  { tag: "Nigeria's Trusted Construction Partner", h1: "We Build Your Dreams", h2: "With Precision.", cta: { label: "Get a Free Quote", href: waLink("Hello Erudition JP ,  I'd like a free quote.") }, bg: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&q=80" },
-  { tag: "Architectural Design Excellence", h1: "Beautiful Designs,", h2: "Built to Last.", cta: { label: "Explore Our Designs", href: "/services" }, bg: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1600&q=80" },
-  { tag: "Real Estate & Property", h1: "Find Your Perfect", h2: "Property in Abuja.", cta: { label: "View Properties", href: "/properties" }, bg: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1600&q=80" },
-  { tag: "Quality Materials & Supply", h1: "Premium Materials,", h2: "Delivered to Your Site.", cta: { label: "Talk to Us", href: waLink("Hello Erudition JP ,  I'd like to enquire about materials.") }, bg: "https://images.unsplash.com/photo-1581094289810-adf5d25690e3?w=1600&q=80" },
+  { tag: "Nigeria's Trusted Construction Partner", h1: "We Build Your Dreams", h2: "With Precision.", cta: { label: "Get a Free Quote", href: waLink("Hello Erudition JP ,  I'd like a free quote.") }, bg: siteImages.twoStoreyShell },
+  { tag: "On-Site Project Supervision", h1: "Hands-On Delivery,", h2: "From Foundation to Finish.", cta: { label: "Explore Our Services", href: "/services" }, bg: siteImages.estateInspection },
+  { tag: "Decking, Reinforcement & Concrete Works", h1: "Structural Strength,", h2: "Built to Code.", cta: { label: "View Our Work", href: "/portfolio" }, bg: siteImages.slabReinforcement },
+  { tag: "Verified Land & Properties", h1: "Find Your Plot", h2: "in Abuja.", cta: { label: "View Properties", href: "/properties" }, bg: siteImages.surveyedLand },
 ];
 
 function Home() {
@@ -104,7 +104,7 @@ function Home() {
       <section className="bg-gray-50 py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 md:grid-cols-2">
           <div>
-            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=900&q=80" alt="Build site" className="rounded-2xl shadow-lg" />
+            <img src={siteImages.siteVisit} alt="Erudition JP on site in Abuja" className="rounded-2xl shadow-lg" />
           </div>
           <div>
             <div className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: "#0056b3" }}>Why Choose Us</div>
@@ -121,6 +121,32 @@ function Home() {
           </div>
         </div>
       </section>
+
+      {/* LIVE FROM OUR SITES */}
+      <section className="mx-auto max-w-7xl px-4 py-20">
+        <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <div className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: "#0056b3" }}>Live from our sites</div>
+            <h2 className="mt-2 text-3xl font-bold">Real projects, real progress.</h2>
+            <p className="mt-2 max-w-xl text-sm text-gray-600">A look at active and recently completed work across Abuja, captured by our project team.</p>
+          </div>
+          <Link to="/portfolio" className="rounded-xl px-5 py-2.5 text-sm font-semibold text-white" style={{ background: "#0056b3" }}>See full portfolio →</Link>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {projectGallery.slice(0, 6).map((p) => (
+            <div key={p.title} className="group overflow-hidden rounded-2xl bg-white shadow-sm">
+              <div className="relative h-60 overflow-hidden">
+                <img src={p.img} alt={p.title} className="h-full w-full object-cover transition duration-500 group-hover:scale-110" />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white">
+                  <div className="text-[10px] font-semibold uppercase tracking-widest text-white/80">{p.cat} · {p.loc}</div>
+                  <div className="text-sm font-bold">{p.title}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
 
       {/* VISION/MISSION */}
       <section style={{ background: "#0056b3" }} className="py-16 text-white">
