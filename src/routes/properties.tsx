@@ -135,6 +135,9 @@ function Properties() {
         <p className="mt-2 text-sm text-white/80">Tell us what you're looking for and we'll source it for you.</p>
         <a href={waLink("Hello Erudition JP, I'm looking for a specific property.")} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex rounded-xl bg-white px-6 py-3 text-sm font-bold" style={{ color: "#0056b3" }}>Tell Us On WhatsApp</a>
       </div>
+      </div>
+
+
 
       {details && (
         <div onClick={() => setDetails(null)} className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm" style={{ animation: "ejp-fade-up .25s ease-out both" }}>
