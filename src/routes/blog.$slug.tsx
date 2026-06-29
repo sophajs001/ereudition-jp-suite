@@ -34,6 +34,9 @@ function Post() {
       <div className="mt-4 text-[10px] font-semibold uppercase tracking-widest" style={{ color: "#0056b3" }}>{post.category}</div>
       <h1 className="mt-2 text-3xl font-bold md:text-4xl">{post.title}</h1>
       <div className="mt-3 text-xs text-gray-500">{post.author} · {post.readTime} read</div>
+      {post.image && (
+        <img src={post.image} alt={post.title} className="mt-6 h-72 w-full rounded-2xl object-cover shadow-sm md:h-96" />
+      )}
       <p className="mt-6 text-base text-gray-700">{post.excerpt}</p>
       <div className="mt-6 space-y-4 text-sm leading-relaxed text-gray-700">
         {post.body.map((p: string, i: number) => <p key={i}>{p}</p>)}
