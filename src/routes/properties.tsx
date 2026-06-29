@@ -135,7 +135,50 @@ function Properties() {
         <p className="mt-2 text-sm text-white/80">Tell us what you're looking for and we'll source it for you.</p>
         <a href={waLink("Hello Erudition JP, I'm looking for a specific property.")} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex rounded-xl bg-white px-6 py-3 text-sm font-bold" style={{ color: "#0056b3" }}>Tell Us On WhatsApp</a>
       </div>
-      </div>
+
+      {details && (
+        <div onClick={() => setDetails(null)} className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm" style={{ animation: "ejp-fade-up .25s ease-out both" }}>
+          <div onClick={(e) => e.stopPropagation()} className="relative max-h-[90vh] w-full max-w-3xl overflow-auto rounded-2xl bg-white shadow-2xl">
+            <button onClick={() => setDetails(null)} aria-label="Close" className="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-black/60 text-white hover:bg-black/80">✕</button>
+            <div className="relative h-64 md:h-80">
+              <img src={propImages[details.type]} alt={details.title} className="h-full w-full object-cover" />
+              <span className="absolute bottom-3 left-3 rounded-md bg-black/70 px-3 py-1.5 text-lg font-bold text-white">{details.price}</span>
+            </div>
+            <div className="p-6">
+              <div className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: "#0056b3" }}>{details.type}</div>
+              <h2 className="mt-1 text-2xl font-bold">{details.title}</h2>
+              <div className="mt-1 text-sm text-gray-500">📍 {details.location}</div>
+              <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                {details.beds && <div className="rounded-xl bg-gray-50 p-3 text-center"><div className="text-xs text-gray-500">Bedrooms</div><div className="text-base font-bold">{details.beds}</div></div>}
+                {details.baths && <div className="rounded-xl bg-gray-50 p-3 text-center"><div className="text-xs text-gray-500">Bathrooms</div><div className="text-base font-bold">{details.baths}</div></div>}
+                {details.size && <div className="rounded-xl bg-gray-50 p-3 text-center"><div className="text-xs text-gray-500">Size</div><div className="text-base font-bold">{details.size}</div></div>}
+                <div className="rounded-xl bg-gray-50 p-3 text-center"><div className="text-xs text-gray-500">Status</div><div className="text-base font-bold text-green-600">Available</div></div>
+              </div>
+              <p className="mt-5 text-sm text-gray-700">{details.desc}</p>
+              <div className="mt-4 flex flex-wrap gap-1.5">
+                {details.tags.map((t) => <span key={t} className="rounded-full bg-[#EFF6FF] px-3 py-1 text-xs font-semibold" style={{ color: "#0056b3" }}>{t}</span>)}
+              </div>
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                <button
+                  onClick={() => { setSelected(details); setDetails(null); setTimeout(() => document.getElementById("book-tour")?.scrollIntoView({ behavior: "smooth" }), 100); }}
+                  className="rounded-xl py-3 text-sm font-bold text-white"
+                  style={{ background: "#0056b3" }}
+                >
+                  Book a Tour
+                </button>
+                <a
+                  href={waLink(`Hello Erudition JP, I'm interested in: ${details.title} at ${details.location} (${details.price}).`)}
+                  target="_blank" rel="noopener noreferrer"
+                  className="rounded-xl py-3 text-center text-sm font-bold text-white"
+                  style={{ background: "#25D366" }}
+                >
+                  💬 Chat on WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
