@@ -83,3 +83,17 @@
 .ejp-reveal > *:nth-child(6) { animation-delay: .32s; }
 .ejp-reveal > *:nth-child(7) { animation-delay: .38s; }
 
+.ejp-reveal-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .75s ease-out, transform .75s ease-out;
+  will-change: opacity, transform;
+}
+.ejp-reveal-item.ejp-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .ejp-reveal-item { opacity: 1; transform: none; transition: none; }
+}
+
