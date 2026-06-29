@@ -15,10 +15,10 @@ export const Route = createFileRoute("/")({
 });
 
 const slides = [
-  { tag: "Nigeria's Trusted Construction Partner", h1: "We Build Your Dreams", h2: "With Precision.", cta: { label: "Get a Free Quote", href: waLink("Hello Erudition JP ,  I'd like a free quote.") }, bg: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&q=80" },
-  { tag: "Architectural Design Excellence", h1: "Beautiful Designs,", h2: "Built to Last.", cta: { label: "Explore Our Designs", href: "/services" }, bg: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1600&q=80" },
-  { tag: "Real Estate & Property", h1: "Find Your Perfect", h2: "Property in Abuja.", cta: { label: "View Properties", href: "/properties" }, bg: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1600&q=80" },
-  { tag: "Quality Materials & Supply", h1: "Premium Materials,", h2: "Delivered to Your Site.", cta: { label: "Talk to Us", href: waLink("Hello Erudition JP ,  I'd like to enquire about materials.") }, bg: "https://images.unsplash.com/photo-1581094289810-adf5d25690e3?w=1600&q=80" },
+  { tag: "Nigeria's Trusted Construction Partner", h1: "We Build Your Dreams", h2: "With Precision.", cta: { label: "Get a Free Quote", href: waLink("Hello Erudition JP ,  I'd like a free quote.") }, bg: siteImages.twoStoreyShell },
+  { tag: "On-Site Project Supervision", h1: "Hands-On Delivery,", h2: "From Foundation to Finish.", cta: { label: "Explore Our Services", href: "/services" }, bg: siteImages.estateInspection },
+  { tag: "Decking, Reinforcement & Concrete Works", h1: "Structural Strength,", h2: "Built to Code.", cta: { label: "View Our Work", href: "/portfolio" }, bg: siteImages.slabReinforcement },
+  { tag: "Verified Land & Properties", h1: "Find Your Plot", h2: "in Abuja.", cta: { label: "View Properties", href: "/properties" }, bg: siteImages.surveyedLand },
 ];
 
 function Home() {
