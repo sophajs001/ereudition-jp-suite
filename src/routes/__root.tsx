@@ -90,6 +90,37 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const router = useRouter();
+  useEffect(() => {
+    if (typeof window === "undefined" || typeof IntersectionObserver === "undefined") return;
+    const apply = () => {
+      const main = document.querySelector("main");
+      if (!main) return;
+      const targets = main.querySelectorAll<HTMLElement>(
+        "section > *:not([data-reveal-skip]), [data-reveal]"
+      );
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              (e.target as HTMLElement).classList.add("ejp-in");
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.08, rootMargin: "0px 0px -40px 0px" }
+      );
+      targets.forEach((el) => {
+        if (el.classList.contains("ejp-in") || el.dataset.revealInit === "1") return;
+        el.dataset.revealInit = "1";
+        el.classList.add("ejp-reveal-item");
+        io.observe(el);
+      });
+    };
+    const t = setTimeout(apply, 60);
+    const unsub = router.subscribe("onResolved", () => setTimeout(apply, 80));
+    return () => { clearTimeout(t); unsub(); };
+  }, [router]);
   return (
     <QueryClientProvider client={queryClient}>
       <Loader />
