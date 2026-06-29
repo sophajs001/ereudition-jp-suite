@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { company, services, testimonials, waLink } from "@/data/company";
+import { company, services, testimonials, waLink, siteImages, projectGallery } from "@/data/company";
 
 export const Route = createFileRoute("/")({
   head: () => ({
