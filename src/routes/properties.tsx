@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { properties, waLink } from "@/data/company";
 import { PageHero } from "@/components/PageHero";
 import { BookATourForm } from "@/components/BookATourForm";
+import { Reveal } from "@/components/Reveal";
 
 export const Route = createFileRoute("/properties")({
   head: () => ({
