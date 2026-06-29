@@ -1,10 +1,11 @@
 import type { ReactNode, CSSProperties } from "react";
+import * as React from "react";
 import { useReveal } from "@/hooks/useReveal";
 
 type Props = {
   children: ReactNode;
   delay?: number;
-  as?: keyof JSX.IntrinsicElements;
+  as?: keyof React.JSX.IntrinsicElements;
   className?: string;
   style?: CSSProperties;
   y?: number;
