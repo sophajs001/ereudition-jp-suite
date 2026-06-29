@@ -58,18 +58,18 @@ function About() {
         </Accordion>
 
         <Accordion title="Leadership & Team">
-          <div className="grid gap-5 md:grid-cols-2">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {team.map((m) => (
-              <div key={m.name} className={`rounded-2xl border p-5 ${m.featured ? "border-[#0056b3] bg-[#EFF6FF] md:col-span-2" : "border-gray-100 bg-white"}`}>
-                <div className="flex gap-4">
-                  <img src={m.img} alt={m.name} className="h-20 w-20 flex-none rounded-xl object-cover" />
-                  <div>
-                    <div className="text-sm font-bold">{m.name}</div>
-                    <div className="text-xs font-semibold" style={{ color: "#0056b3" }}>{m.role}</div>
-                    <p className="mt-2 text-xs text-gray-600">{m.bio}</p>
-                    <div className="mt-2 flex flex-wrap gap-1.5">
-                      {m.expertise.map((e) => <span key={e} className="rounded-full bg-white px-2 py-0.5 text-[10px] font-semibold text-gray-700 ring-1 ring-gray-200">{e}</span>)}
-                    </div>
+              <div key={m.name} className={`overflow-hidden rounded-2xl border text-center shadow-sm transition hover:-translate-y-1 hover:shadow-md ${m.featured ? "border-[#0056b3] bg-[#EFF6FF] sm:col-span-2 lg:col-span-3" : "border-gray-100 bg-white"}`}>
+                <div className={`relative w-full overflow-hidden ${m.featured ? "h-72 md:h-96" : "h-64"}`} style={{ background: "#0b1220" }}>
+                  <img src={m.img} alt={m.name} className="h-full w-full object-cover object-top" />
+                </div>
+                <div className="p-5">
+                  <div className="text-base font-bold">{m.name}</div>
+                  <div className="mt-1 text-xs font-semibold uppercase tracking-wide" style={{ color: "#0056b3" }}>{m.role}</div>
+                  <p className="mt-3 text-sm text-gray-600">{m.bio}</p>
+                  <div className="mt-3 flex flex-wrap justify-center gap-1.5">
+                    {m.expertise.map((e) => <span key={e} className="rounded-full bg-[#EFF6FF] px-2.5 py-0.5 text-[10px] font-semibold" style={{ color: "#0056b3" }}>{e}</span>)}
                   </div>
                 </div>
               </div>
