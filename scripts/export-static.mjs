@@ -135,6 +135,8 @@ async function main() {
     catch (err) { console.error(`✗ ${route} failed:`, err.message); }
   }
 
+  await harvestCdnAssetsFromBundles();
+
   console.log(`\n✅ Done. Upload the CONTENTS of ${OUT}/ to your host's public_html.`);
 }
 
