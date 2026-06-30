@@ -136,15 +136,23 @@ function Home() {
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {projectGallery.slice(0, 6).map((p) => (
-            <div key={p.title} className="group overflow-hidden rounded-2xl bg-white shadow-sm">
+            <button
+              key={p.title}
+              onClick={() => setLb({ img: p.img, title: p.title, desc: p.desc })}
+              className="group block overflow-hidden rounded-2xl bg-white text-left shadow-sm"
+              aria-label={`View ${p.title}`}
+            >
               <div className="relative h-60 overflow-hidden">
                 <img src={p.img} alt={p.title} className="h-full w-full object-cover transition duration-500 group-hover:scale-110" />
+                <div className="absolute inset-0 flex items-center justify-center bg-black/0 opacity-0 transition group-hover:bg-black/30 group-hover:opacity-100">
+                  <span className="rounded-full bg-white/95 px-4 py-1.5 text-xs font-bold text-gray-900">🔍 View</span>
+                </div>
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white">
                   <div className="text-[10px] font-semibold uppercase tracking-widest text-white/80">{p.cat} · {p.loc}</div>
                   <div className="text-sm font-bold">{p.title}</div>
                 </div>
               </div>
-            </div>
+            </button>
           ))}
         </div>
       </section>
