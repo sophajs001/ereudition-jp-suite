@@ -24,6 +24,7 @@ const slides = [
 
 function Home() {
   const [i, setI] = useState(0);
+  const [lb, setLb] = useState<{ img: string; title: string; desc?: string } | null>(null);
   useEffect(() => {
     const t = setInterval(() => setI((p) => (p + 1) % slides.length), 5500);
     return () => clearInterval(t);
