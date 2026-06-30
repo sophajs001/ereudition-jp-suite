@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { company, services, testimonials, waLink, siteImages, projectGallery } from "@/data/company";
+import { Lightbox } from "@/components/Lightbox";
 
 export const Route = createFileRoute("/")({
   head: () => ({
