@@ -208,6 +208,7 @@ function Home() {
           </div>
         </div>
       </section>
+      {lb && <Lightbox src={lb.img} alt={lb.title} caption={`${lb.title}${lb.desc ? " — " + lb.desc : ""}`} onClose={() => setLb(null)} />}
     </>
   );
 }
