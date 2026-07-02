@@ -43,20 +43,29 @@ function Blog() {
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {rest.map((p, i) => (
             <Reveal key={p.slug} delay={(i % 6) * 60}>
-              <Link to="/blog/$slug" params={{ slug: p.slug }} className="block overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md">
-                <div className="h-44 overflow-hidden">
+              <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+                <Link to="/blog/$slug" params={{ slug: p.slug }} className="block h-44 overflow-hidden">
                   <img src={p.image} alt={p.title} className="h-full w-full object-cover transition duration-500 hover:scale-110" />
-                </div>
-                <div className="p-5">
+                </Link>
+                <div className="flex flex-1 flex-col p-5">
                   <div className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: "#0056b3" }}>{p.category}</div>
                   <h3 className="mt-2 text-base font-bold">{p.title}</h3>
                   <p className="mt-2 text-sm text-gray-600 line-clamp-3">{p.excerpt}</p>
                   <div className="mt-3 text-xs text-gray-500">{p.author} · {p.readTime} read</div>
+                  <Link
+                    to="/blog/$slug"
+                    params={{ slug: p.slug }}
+                    className="mt-4 inline-flex w-fit items-center gap-1 rounded-lg px-4 py-2 text-xs font-bold text-white transition hover:opacity-90"
+                    style={{ background: "#0056b3" }}
+                  >
+                    Read article →
+                  </Link>
                 </div>
-              </Link>
+              </article>
             </Reveal>
           ))}
         </div>
+
       </div>
     </>
   );
