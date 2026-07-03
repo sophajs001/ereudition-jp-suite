@@ -19,21 +19,19 @@ import { dirname, join } from "node:path";
 const BASE = (process.env.BASE || "https://ereudition-jp-suite.lovable.app").replace(/\/$/, "");
 const OUT = "static-site";
 
-const PAGES = [
-  "/",
-  "/about",
-  "/services",
-  "/properties",
-  "/portfolio",
-  "/blog",
-  "/contact",
-  "/blog/choosing-building-materials",
-  "/blog/land-ownership-abuja",
-  "/blog/sustainable-construction-nigeria",
-  "/blog/what-is-bill-of-quantities",
-  "/blog/choosing-contractor-abuja",
-  "/blog/real-estate-investment-abuja",
-];
+// Auto-discover blog slugs from src/data/company.ts so new articles are
+// always exported without editing this script.
+async function discoverBlogSlugs() {
+  const { readFile } = await import("node:fs/promises");
+  try {
+    const src = await readFile("src/data/company.ts", "utf8");
+    return [...src.matchAll(/slug:\s*"([a-z0-9-]+)"/g)].map((m) => m[1]);
+  } catch {
+    return [];
+  }
+}
+
+const STATIC_PAGES = ["/", "/about", "/services", "/properties", "/portfolio", "/blog", "/contact"];
 
 const seenAssets = new Set();
 const ASSET_RE = /(?:href|src)="([^"]+)"/g;
@@ -130,6 +128,10 @@ async function main() {
   await rm(OUT, { recursive: true, force: true });
   await mkdir(OUT, { recursive: true });
 
+  const slugs = await discoverBlogSlugs();
+  const PAGES = [...STATIC_PAGES, ...slugs.map((s) => `/blog/${s}`)];
+  console.log(`Crawling ${PAGES.length} pages (${slugs.length} blog articles auto-discovered)\n`);
+
   for (const route of PAGES) {
     try { await processPage(route); }
     catch (err) { console.error(`✗ ${route} failed:`, err.message); }
@@ -137,7 +139,24 @@ async function main() {
 
   await harvestCdnAssetsFromBundles();
 
+  // SPA fallback for Apache (whogohost / cPanel / Hostinger). If a user
+  // deep-links to a route we somehow didn't prerender, serve the home
+  // index.html and let the client router take over instead of 404-ing.
+  const htaccess = `Options -MultiViews
+RewriteEngine On
+RewriteBase /
+# Serve real files/dirs directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+# Otherwise fall back to the home index.html
+RewriteRule ^ index.html [L]
+`;
+  await writeFile(join(OUT, ".htaccess"), htaccess, "utf8");
+  console.log("✓ wrote .htaccess (SPA fallback)");
+
   console.log(`\n✅ Done. Upload the CONTENTS of ${OUT}/ to your host's public_html.`);
 }
 
 main();
+
