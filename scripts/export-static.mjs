@@ -19,21 +19,19 @@ import { dirname, join } from "node:path";
 const BASE = (process.env.BASE || "https://ereudition-jp-suite.lovable.app").replace(/\/$/, "");
 const OUT = "static-site";
 
-const PAGES = [
-  "/",
-  "/about",
-  "/services",
-  "/properties",
-  "/portfolio",
-  "/blog",
-  "/contact",
-  "/blog/choosing-building-materials",
-  "/blog/land-ownership-abuja",
-  "/blog/sustainable-construction-nigeria",
-  "/blog/what-is-bill-of-quantities",
-  "/blog/choosing-contractor-abuja",
-  "/blog/real-estate-investment-abuja",
-];
+// Auto-discover blog slugs from src/data/company.ts so new articles are
+// always exported without editing this script.
+async function discoverBlogSlugs() {
+  const { readFile } = await import("node:fs/promises");
+  try {
+    const src = await readFile("src/data/company.ts", "utf8");
+    return [...src.matchAll(/slug:\s*"([a-z0-9-]+)"/g)].map((m) => m[1]);
+  } catch {
+    return [];
+  }
+}
+
+const STATIC_PAGES = ["/", "/about", "/services", "/properties", "/portfolio", "/blog", "/contact"];
 
 const seenAssets = new Set();
 const ASSET_RE = /(?:href|src)="([^"]+)"/g;
