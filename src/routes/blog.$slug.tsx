@@ -2,12 +2,12 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { blogPosts, waLink, company } from "@/data/company";
 
 export const Route = createFileRoute("/blog/$slug")({
-  loader: ({ params }) => {
+  loader: ({ params }: { params: { slug: string } }) => {
     const post = blogPosts.find((p) => p.slug === params.slug);
     if (!post) throw notFound();
     return post;
   },
-  head: ({ loaderData }) => ({
+  head: ({ loaderData }: { loaderData?: any }) => ({
     meta: loaderData
       ? [
           { title: `${loaderData.title} , Erudition JP Blog` },
