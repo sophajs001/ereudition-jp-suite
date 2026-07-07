@@ -112,10 +112,10 @@ export function Link({
       <NavLink
         to={href}
         end={activeOptions?.exact}
-        className={({ isActive }) =>
+        className={({ isActive }: { isActive: boolean }) =>
           isActive && activeProps.className ? activeProps.className : (className ?? "")
         }
-        style={({ isActive }) =>
+        style={({ isActive }: { isActive: boolean }) =>
           isActive && activeProps.style ? activeProps.style : style
         }
         {...(rest as any)}
