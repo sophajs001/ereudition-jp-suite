@@ -7,7 +7,7 @@ export const Route = createFileRoute("/blog/$slug")({
     if (!post) throw notFound();
     return post;
   },
-  head: ({ loaderData }: { loaderData: any }) => ({
+  head: ({ loaderData }: { loaderData?: any }) => ({
     meta: loaderData
       ? [
           { title: `${loaderData.title} , Erudition JP Blog` },
