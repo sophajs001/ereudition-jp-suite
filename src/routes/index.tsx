@@ -71,7 +71,12 @@ function Home() {
       {/* STATS */}
       <section className="relative z-20 mx-auto mt-6 max-w-6xl px-4 md:-mt-12">
         <div className="grid grid-cols-2 gap-4 rounded-2xl border border-gray-100 bg-white p-6 shadow-xl md:grid-cols-4">
-          {[["150+", "Projects Completed"], ["10+", "Years Experience"], ["200+", "Happy Clients"], ["30+", "Properties Listed"]].map(([n, l]) => (
+          {[
+            ["30+", "Years Founder Building Experience"],
+            ["150+", "Projects Delivered"],
+            ["200+", "Satisfied Clients"],
+            ["30+", "Properties Sourced & Marketed"],
+          ].map(([n, l]) => (
             <div key={l} className="text-center">
               <div className="text-3xl font-black" style={{ color: "#0056b3" }}>{n}</div>
               <div className="mt-1 text-xs font-semibold uppercase tracking-wider text-gray-500">{l}</div>
@@ -180,19 +185,27 @@ function Home() {
         </div>
         <div className="relative overflow-hidden">
           <div className="flex w-max gap-5 ejp-marquee">
-            {[...testimonials, ...testimonials].map((t, idx) => (
-              <div key={idx} className="w-[320px] flex-none rounded-2xl border border-gray-200 bg-white p-6" style={{ boxShadow: "0 6px 20px rgba(0,86,179,0.06)" }}>
-                <div className="text-amber-400">★★★★★</div>
-                <p className="mt-3 text-sm text-gray-700">"{t.quote}"</p>
-                <div className="mt-4 flex items-center gap-3">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-full text-sm font-bold text-white" style={{ background: "#0056b3" }}>{t.author[0]}</div>
-                  <div>
-                    <div className="text-sm font-bold">{t.author}</div>
-                    <div className="text-xs text-gray-500">{t.role}</div>
+            {[...testimonials, ...testimonials].map((t, idx) => {
+              const isClone = idx >= testimonials.length;
+              return (
+                <div
+                  key={idx}
+                  className="w-[320px] flex-none rounded-2xl border border-gray-200 bg-white p-6"
+                  style={{ boxShadow: "0 6px 20px rgba(0,86,179,0.06)" }}
+                  {...(isClone ? { "aria-hidden": true, "data-nosnippet": true } : {})}
+                >
+                  <div className="text-amber-400">★★★★★</div>
+                  <p className="mt-3 text-sm text-gray-700">"{t.quote}"</p>
+                  <div className="mt-4 flex items-center gap-3">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-full text-sm font-bold text-white" style={{ background: "#0056b3" }}>{t.author[0]}</div>
+                    <div>
+                      <div className="text-sm font-bold">{t.author}</div>
+                      <div className="text-xs text-gray-500">{t.role}</div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
