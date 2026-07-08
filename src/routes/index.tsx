@@ -16,7 +16,7 @@ export const Route = createFileRoute("/")({
 });
 
 const slides = [
-  { tag: "Nigeria's Trusted Construction Partner", h1: "We Build Your Dreams", h2: "With Precision.", cta: { label: "Get a Free Quote", href: waLink("Hello Erudition JP— I'd like a free quote.") }, bg: siteImages.twoStoreyShell },
+  { tag: "Your Trusted Construction & Property Partner in Abuja", h1: "We Build Your Dreams", h2: "With Precision.", cta: { label: "Get a Free Quote", href: waLink("Hello Erudition JP—I'd like a free quote.") }, bg: siteImages.twoStoreyShell },
   { tag: "On-Site Project Supervision", h1: "Hands-On Delivery,", h2: "From Foundation to Finish.", cta: { label: "Explore Our Services", href: "/services" }, bg: siteImages.estateInspection },
   { tag: "Decking, Reinforcement & Concrete Works", h1: "Structural Strength,", h2: "Built to Code.", cta: { label: "View Our Work", href: "/portfolio" }, bg: siteImages.slabReinforcement },
   { tag: "Verified Land & Properties", h1: "Find Your Plot", h2: "in Abuja.", cta: { label: "View Properties", href: "/properties" }, bg: siteImages.surveyedLand },
