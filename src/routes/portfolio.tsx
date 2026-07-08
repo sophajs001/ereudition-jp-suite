@@ -8,7 +8,7 @@ import { Reveal } from "@/components/Reveal";
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
-      { title: "Portfolio , Erudition JP Enterprise" },
+      { title: "Portfolio—Erudition JP Enterprise" },
       { name: "description", content: "Selected projects from our delivered builds across Abuja." },
       { property: "og:title", content: "Our Portfolio" },
       { property: "og:description", content: "Recent design and construction projects." },

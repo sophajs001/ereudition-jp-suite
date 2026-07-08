@@ -10,7 +10,7 @@ export const Route = createFileRoute("/blog/$slug")({
   head: ({ loaderData }: { loaderData?: any }) => ({
     meta: loaderData
       ? [
-          { title: `${loaderData.title} , Erudition JP Blog` },
+          { title: `${loaderData.title}—Erudition JP Blog` },
           { name: "description", content: loaderData.excerpt },
           { property: "og:title", content: loaderData.title },
           { property: "og:description", content: loaderData.excerpt },
@@ -37,7 +37,7 @@ function Post() {
     typeof window !== "undefined"
       ? window.location.href
       : `https://ereudition-jp-suite.lovable.app/blog/${post.slug}`;
-  const shareText = `${post.title} , ${company.short}`;
+  const shareText = `${post.title}—${company.short}`;
 
   const shares = {
     whatsapp: waLink(`${shareText}\n${shareUrl}`),
@@ -109,9 +109,9 @@ function Post() {
 
       <div className="mt-10 rounded-2xl p-6 text-white" style={{ background: "linear-gradient(135deg, #003d82, #0056b3)" }}>
         <div className="text-lg font-bold">Have questions on this topic?</div>
-        <p className="mt-1 text-sm text-white/80">Chat with our team on WhatsApp , we respond fast.</p>
+        <p className="mt-1 text-sm text-white/80">Chat with our team on WhatsApp—we respond fast.</p>
         <a
-          href={waLink(`Hello Erudition JP , I read "${post.title}" and have a question.`)}
+          href={waLink(`Hello Erudition JP—I read "${post.title}" and have a question.`)}
           target="_blank"
           rel="noopener noreferrer"
           className="mt-4 inline-flex rounded-xl bg-white px-5 py-2.5 text-sm font-bold"

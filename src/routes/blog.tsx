@@ -6,7 +6,7 @@ import { Reveal } from "@/components/Reveal";
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
-      { title: "Blog , Erudition JP Enterprise" },
+      { title: "Blog—Erudition JP Enterprise" },
       { name: "description", content: "Practical guides on construction, materials and real estate in Abuja." },
       { property: "og:title", content: "Erudition JP Blog" },
       { property: "og:description", content: "Insights from our team for builders, buyers and investors." },
