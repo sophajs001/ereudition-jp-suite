@@ -6,10 +6,10 @@ import { PageHero } from "@/components/PageHero";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services ,  Erudition JP Enterprise" },
+      { title: "Services— Erudition JP Enterprise" },
       { name: "description", content: "Design & Construction, Consultancy & Planning, Materials & Supply, and Real Estate services in Abuja." },
       { property: "og:title", content: "Our Services" },
-      { property: "og:description", content: "Four service pillars ,  designed and delivered by Erudition JP." },
+      { property: "og:description", content: "Four service pillars— designed and delivered by Erudition JP." },
     ],
   }),
   component: Services,
@@ -58,7 +58,7 @@ function Services() {
                     ))}
                   </ul>
                   <div className="mt-5 flex flex-wrap gap-3">
-                    <a href={waLink(`Hello Erudition JP ,  I'd like to enquire about ${s.title}.`)} target="_blank" rel="noopener noreferrer" className="rounded-xl px-5 py-2.5 text-sm font-semibold text-white" style={{ background: color }}>Enquire on WhatsApp</a>
+                    <a href={waLink(`Hello Erudition JP— I'd like to enquire about ${s.title}.`)} target="_blank" rel="noopener noreferrer" className="rounded-xl px-5 py-2.5 text-sm font-semibold text-white" style={{ background: color }}>Enquire on WhatsApp</a>
                   </div>
                 </div>
               )}

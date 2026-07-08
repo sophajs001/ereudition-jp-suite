@@ -8,7 +8,7 @@ import { Reveal } from "@/components/Reveal";
 export const Route = createFileRoute("/properties")({
   head: () => ({
     meta: [
-      { title: "Properties ,  Erudition JP Enterprise" },
+      { title: "Properties— Erudition JP Enterprise" },
       { name: "description", content: "Verified land, residential and commercial properties for sale in Abuja FCT." },
       { property: "og:title", content: "Properties for Sale in Abuja" },
       { property: "og:description", content: "Browse our verified property listings across the FCT." },

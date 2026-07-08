@@ -6,17 +6,17 @@ import { Lightbox } from "@/components/Lightbox";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Erudition JP Enterprise ,  Build Your Dreams in Abuja" },
+      { title: "Erudition JP Enterprise— Build Your Dreams in Abuja" },
       { name: "description", content: "Trusted design, construction, real estate and materials in Abuja FCT. 150+ projects. 10+ years." },
       { property: "og:title", content: "Erudition JP Enterprise" },
-      { property: "og:description", content: "We build your dreams ,  Abuja's reliable construction partner." },
+      { property: "og:description", content: "We build your dreams— Abuja's reliable construction partner." },
     ],
   }),
   component: Home,
 });
 
 const slides = [
-  { tag: "Nigeria's Trusted Construction Partner", h1: "We Build Your Dreams", h2: "With Precision.", cta: { label: "Get a Free Quote", href: waLink("Hello Erudition JP ,  I'd like a free quote.") }, bg: siteImages.twoStoreyShell },
+  { tag: "Your Trusted Construction & Property Partner in Abuja", h1: "We Build Your Dreams", h2: "With Precision.", cta: { label: "Get a Free Quote", href: waLink("Hello Erudition JP—I'd like a free quote.") }, bg: siteImages.twoStoreyShell },
   { tag: "On-Site Project Supervision", h1: "Hands-On Delivery,", h2: "From Foundation to Finish.", cta: { label: "Explore Our Services", href: "/services" }, bg: siteImages.estateInspection },
   { tag: "Decking, Reinforcement & Concrete Works", h1: "Structural Strength,", h2: "Built to Code.", cta: { label: "View Our Work", href: "/portfolio" }, bg: siteImages.slabReinforcement },
   { tag: "Verified Land & Properties", h1: "Find Your Plot", h2: "in Abuja.", cta: { label: "View Properties", href: "/properties" }, bg: siteImages.surveyedLand },
@@ -48,7 +48,7 @@ function Home() {
             {s.h1}<br />
             <span style={{ color: "#93c5fd" }}>{s.h2}</span>
           </h1>
-          <p className="mt-4 max-w-xl text-sm text-white/80">Design, construction, materials and verified real estate ,  delivered with integrity and on time, across Abuja FCT.</p>
+          <p className="mt-4 max-w-xl text-sm text-white/80">Design, construction, materials and verified real estate— delivered with integrity and on time, across Abuja FCT.</p>
           <div className="mt-6 flex flex-wrap gap-3">
             {isExternal ? (
               <a href={s.cta.href} target="_blank" rel="noopener noreferrer" className="rounded-xl bg-white px-7 py-3 text-sm font-bold" style={{ color: "#0056b3" }}>{s.cta.label} →</a>
@@ -71,7 +71,12 @@ function Home() {
       {/* STATS */}
       <section className="relative z-20 mx-auto mt-6 max-w-6xl px-4 md:-mt-12">
         <div className="grid grid-cols-2 gap-4 rounded-2xl border border-gray-100 bg-white p-6 shadow-xl md:grid-cols-4">
-          {[["150+", "Projects Completed"], ["10+", "Years Experience"], ["200+", "Happy Clients"], ["30+", "Properties Listed"]].map(([n, l]) => (
+          {[
+            ["30+", "Years Founder Building Experience"],
+            ["150+", "Projects Delivered"],
+            ["200+", "Satisfied Clients"],
+            ["30+", "Properties Sourced & Marketed"],
+          ].map(([n, l]) => (
             <div key={l} className="text-center">
               <div className="text-3xl font-black" style={{ color: "#0056b3" }}>{n}</div>
               <div className="mt-1 text-xs font-semibold uppercase tracking-wider text-gray-500">{l}</div>
@@ -110,16 +115,16 @@ function Home() {
           </div>
           <div>
             <div className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: "#0056b3" }}>Why Choose Us</div>
-            <h2 className="mt-2 text-3xl font-bold">Don't struggle alone ,  let us help you build right.</h2>
+            <h2 className="mt-2 text-3xl font-bold">Don't struggle alone— let us help you build right.</h2>
             <ul className="mt-6 space-y-4">
-              {["Academic & Practical Expertise ,  degree-trained and site-trained since 1992", "Timely delivery on every milestone", "200+ satisfied clients across the FCT"].map((t) => (
+              {["Academic & Practical Expertise— degree-trained and site-trained since 1992", "Timely delivery on every milestone", "200+ satisfied clients across the FCT"].map((t) => (
                 <li key={t} className="flex gap-3 text-sm text-gray-700">
                   <span className="mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full text-white" style={{ background: "#0056b3" }}>✓</span>
                   {t}
                 </li>
               ))}
             </ul>
-            <a href={waLink("Hello Erudition JP ,  I want to discuss a project.")} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex rounded-xl px-6 py-3 text-sm font-semibold text-white" style={{ background: "#0056b3" }}>Talk to Us →</a>
+            <a href={waLink("Hello Erudition JP— I want to discuss a project.")} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex rounded-xl px-6 py-3 text-sm font-semibold text-white" style={{ background: "#0056b3" }}>Talk to Us →</a>
           </div>
         </div>
       </section>
@@ -180,19 +185,27 @@ function Home() {
         </div>
         <div className="relative overflow-hidden">
           <div className="flex w-max gap-5 ejp-marquee">
-            {[...testimonials, ...testimonials].map((t, idx) => (
-              <div key={idx} className="w-[320px] flex-none rounded-2xl border border-gray-200 bg-white p-6" style={{ boxShadow: "0 6px 20px rgba(0,86,179,0.06)" }}>
-                <div className="text-amber-400">★★★★★</div>
-                <p className="mt-3 text-sm text-gray-700">"{t.quote}"</p>
-                <div className="mt-4 flex items-center gap-3">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-full text-sm font-bold text-white" style={{ background: "#0056b3" }}>{t.author[0]}</div>
-                  <div>
-                    <div className="text-sm font-bold">{t.author}</div>
-                    <div className="text-xs text-gray-500">{t.role}</div>
+            {[...testimonials, ...testimonials].map((t, idx) => {
+              const isClone = idx >= testimonials.length;
+              return (
+                <div
+                  key={idx}
+                  className="w-[320px] flex-none rounded-2xl border border-gray-200 bg-white p-6"
+                  style={{ boxShadow: "0 6px 20px rgba(0,86,179,0.06)" }}
+                  {...(isClone ? { "aria-hidden": true, "data-nosnippet": true } : {})}
+                >
+                  <div className="text-amber-400">★★★★★</div>
+                  <p className="mt-3 text-sm text-gray-700">"{t.quote}"</p>
+                  <div className="mt-4 flex items-center gap-3">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-full text-sm font-bold text-white" style={{ background: "#0056b3" }}>{t.author[0]}</div>
+                    <div>
+                      <div className="text-sm font-bold">{t.author}</div>
+                      <div className="text-xs text-gray-500">{t.role}</div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -201,9 +214,9 @@ function Home() {
       <section className="mx-auto max-w-5xl px-4 pb-20">
         <div className="rounded-3xl p-10 text-center text-white" style={{ background: "linear-gradient(135deg, #003d82, #0056b3, #1a73c8)" }}>
           <h2 className="text-3xl font-bold">Ready to Build Something Great?</h2>
-          <p className="mt-2 text-sm text-white/80">Tell us about your project ,  we'll respond within hours.</p>
+          <p className="mt-2 text-sm text-white/80">Tell us about your project— we'll respond within hours.</p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <a href={waLink("Hello Erudition JP ,  let's discuss my project.")} target="_blank" rel="noopener noreferrer" className="rounded-xl px-6 py-3 text-sm font-bold text-white" style={{ background: "#0056b3" }}>Chat on WhatsApp</a>
+            <a href={waLink("Hello Erudition JP— let's discuss my project.")} target="_blank" rel="noopener noreferrer" className="rounded-xl px-6 py-3 text-sm font-bold text-white" style={{ background: "#0056b3" }}>Chat on WhatsApp</a>
             <a href={`tel:${company.phones[0]}`} className="rounded-xl bg-white px-6 py-3 text-sm font-bold" style={{ color: "#0056b3" }}>Call {company.phones[0]}</a>
           </div>
         </div>
