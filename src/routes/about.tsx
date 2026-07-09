@@ -41,7 +41,49 @@ function About() {
         crumbs={[{ label: "Home" }, { label: "About" }]}
       />
       <div className="mx-auto max-w-5xl px-4 py-12">
+        {/* Credentials strip */}
+        <section className="mb-10 grid gap-6 md:grid-cols-2">
+          <div className="rounded-2xl border-2 border-dashed p-6" style={{ borderColor: "#0056b3", background: "#F8FAFF" }}>
+            <div className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: "#0056b3" }}>Registered Business</div>
+            <h3 className="mt-1 text-lg font-bold">CAC Certificate of Incorporation</h3>
+            <p className="mt-2 text-sm text-gray-600">Erudition JP Enterprise is duly registered with the Corporate Affairs Commission of Nigeria. Certificate available on request.</p>
+            <div className="mt-4 flex h-40 items-center justify-center rounded-xl border border-gray-200 bg-white text-xs text-gray-400">
+              Certificate image — drop your scan at <code className="ml-1">src/assets/cac-certificate.jpg</code>
+            </div>
+          </div>
+          <div className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
+            <div className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: "#0056b3" }}>Professional Membership</div>
+            <h3 className="mt-1 text-lg font-bold">Nigerian Institute of Building (NIOB)</h3>
+            <p className="mt-2 text-sm text-gray-600">Our CEO, Onyeke Judemary O., is a Graduate Member of the Nigerian Institute of Building — a professionally recognised Builder registered with the industry's regulating body.</p>
+            <div className="mt-4 inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold" style={{ background: "#EFF6FF", color: "#0056b3" }}>
+              <span>◆</span> GNIOB Certified
+            </div>
+          </div>
+        </section>
+
+        {/* Past employers */}
+        <section className="mb-10 rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
+          <div className="text-center">
+            <div className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: "#0056b3" }}>Track Record</div>
+            <h3 className="mt-1 text-lg font-bold">Organisations our founder has worked with</h3>
+            <p className="mt-2 text-sm text-gray-600">Over three decades of hands-on building experience across Nigeria's most demanding projects.</p>
+          </div>
+          <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+            {pastEmployers.map((e) => (
+              <div key={e.name} className="group flex flex-col items-center rounded-xl border border-gray-100 bg-gray-50 p-4 text-center transition hover:border-[#0056b3] hover:bg-white">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full text-base font-black text-white transition group-hover:scale-105" style={{ background: "linear-gradient(135deg, #0056b3, #003d82)" }}>
+                  {e.short}
+                </div>
+                <div className="mt-3 text-xs font-bold leading-tight">{e.name}</div>
+                {e.location && <div className="mt-0.5 text-[10px] text-gray-500">{e.location}</div>}
+              </div>
+            ))}
+          </div>
+          <p className="mt-4 text-center text-[10px] text-gray-400">Company monograms shown. Full logos can be added on request.</p>
+        </section>
+
         <div className="mt-2 space-y-4">
+
 
         <Accordion title="Our History & Story" defaultOpen>
           <p>Erudition JP Enterprise was founded by <strong>Onyeke Judemary O.</strong> and <strong>Prisca</strong> to bridge academic knowledge and practical construction realities in Nigeria.</p>
