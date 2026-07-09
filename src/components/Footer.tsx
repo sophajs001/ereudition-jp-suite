@@ -100,11 +100,15 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-5 text-center text-xs text-gray-500 md:flex-row md:text-left">
           <div>© {new Date().getFullYear()} {company.name}. All rights reserved.</div>
-          <div>
-            Powered by{" "}
-            <a href="https://sophajs.com" target="_blank" rel="noopener noreferrer" className="font-semibold text-white hover:text-[#1a73c8]">
-              Sophajs Global Tech
-            </a>
+          <div className="flex items-center gap-4">
+            <Link to="/privacy" className="hover:text-white">Privacy</Link>
+            <Link to="/terms" className="hover:text-white">Terms</Link>
+            <span>
+              Powered by{" "}
+              <a href="https://sophajs.com" target="_blank" rel="noopener noreferrer" className="font-semibold text-white hover:text-[#1a73c8]">
+                Sophajs Global Tech
+              </a>
+            </span>
           </div>
         </div>
       </div>
