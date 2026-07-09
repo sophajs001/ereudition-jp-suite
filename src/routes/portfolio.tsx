@@ -59,7 +59,10 @@ function Portfolio() {
                   <h3 className="mt-1 text-base font-bold">{p.title}</h3>
                   <div className="mt-1 text-xs text-gray-500">📍 {p.loc}</div>
                   {p.desc && <p className="mt-2 text-sm text-gray-600">{p.desc}</p>}
-                  <a href={waLink(`Hello Erudition JP, I'd like to know more about your ${p.title} project.`)} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex text-sm font-semibold" style={{ color: "#0056b3" }}>Enquire on WhatsApp →</a>
+                  <div className="mt-3 flex items-center justify-between gap-3">
+                    <Link to={`/portfolio/${slugify(p.title)}`} className="text-sm font-semibold" style={{ color: "#0056b3" }}>Case study →</Link>
+                    <a href={waLink(`Hello Erudition JP, I'd like to know more about your ${p.title} project.`)} target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-gray-500 hover:text-[#0056b3]">WhatsApp</a>
+                  </div>
                 </div>
               </div>
             </Reveal>
