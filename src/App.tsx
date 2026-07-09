@@ -9,11 +9,16 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Route as IndexRoute } from "./routes/index";
 import { Route as AboutRoute } from "./routes/about";
 import { Route as ServicesRoute } from "./routes/services";
+import { Route as ServiceSlugRoute } from "./routes/services.$slug";
 import { Route as PropertiesRoute } from "./routes/properties";
+import { Route as PropertySlugRoute } from "./routes/properties.$slug";
 import { Route as PortfolioRoute } from "./routes/portfolio";
+import { Route as PortfolioSlugRoute } from "./routes/portfolio.$slug";
 import { Route as BlogRoute } from "./routes/blog";
 import { Route as BlogSlugRoute } from "./routes/blog.$slug";
 import { Route as ContactRoute } from "./routes/contact";
+import { Route as PrivacyRoute } from "./routes/privacy";
+import { Route as TermsRoute } from "./routes/terms";
 
 // Convert TanStack-style "$slug" path segments to react-router ":slug".
 const toRR = (p: string) => p.replace(/\$(\w+)/g, ":$1");
@@ -22,11 +27,16 @@ const routes = [
   IndexRoute,
   AboutRoute,
   ServicesRoute,
+  ServiceSlugRoute,
   PropertiesRoute,
+  PropertySlugRoute,
   PortfolioRoute,
+  PortfolioSlugRoute,
   BlogRoute,
   BlogSlugRoute,
   ContactRoute,
+  PrivacyRoute,
+  TermsRoute,
 ];
 
 function RevealOnScroll() {
